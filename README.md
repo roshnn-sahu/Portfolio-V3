@@ -1,14 +1,14 @@
-# [ratneshc.com](https://ratneshc.com) &middot; ![GitHub Repo Views](https://gitviews.com/repo/ratneshchipre/ratneshc.com.svg?style=flat&label-color=%231e293b&color=%23475569)
+# [dev-roshan.com](https://dev-roshan.com)
 
 A clean, professional showcase for my projects, work history, and personal blog as a Full Stack Developer.
 
-→ Check out the live site: [ratneshc.com](https://ratneshc.com)
+→ Check out the live site: [dev-roshan.com](https://dev-roshan.com)
 
-<a href="https://ratneshc.com">
+<a href="https://dev-roshan.com">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./public/images/screenshot-dark.webp">
     <source media="(prefers-color-scheme: light)" srcset="./public/images/screenshot-light.webp">
-    <img alt="ratneshc.com" src="./public/images/screenshot-light.webp">
+    <img alt="https://dev-roshan.com" src="./public/images/screenshot-light.webp">
   </picture>
 </a>
 
@@ -37,10 +37,12 @@ A clean, professional showcase for my projects, work history, and personal blog 
 ## Star History
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://repostars.dev/api/embed?repo=ratneshchipre%2Fratneshc.com&theme=dark">
-  <source media="(prefers-color-scheme: light)" srcset="https://repostars.dev/api/embed?repo=ratneshchipre%2Fratneshc.com&theme=light">
-  <img alt="Star History Chart" src="https://repostars.dev/api/embed?repo=ratneshchipre%2Fratneshc.com&theme=light">
+  <source media="(prefers-color-scheme: dark)" srcset="https://repostars.dev/api/embed?repo=roshnn-sahu%2Fdev-roshan.com&theme=dark">
+  <source media="(prefers-color-scheme: light)" srcset="https://repostars.dev/api/embed?repo=roshnn-sahu%2Fdev-roshan.com&theme=light">
+  <img alt="Star History Chart" src="https://repostars.dev/api/embed?repo=roshnn-sahu%2Fdev-roshan.com&theme=light">
 </picture>
+
+[![RepoStars](https://repostars.dev/api/embed?repo=roshnn-sahu%2Fdev-roshan.com&theme=dark)](https://repostars.dev/?repos=roshnn-sahu%2Fdev-roshan.com&theme=dark)
 
 ## License
 
