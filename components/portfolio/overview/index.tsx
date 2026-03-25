@@ -9,18 +9,22 @@ export default function Overview() {
           I&apos;m a 20yo Full-Stack Developer focused on building clean,
           scalable web products. <br /> <br /> Currently, I&apos;m building{" "}
           <Link
-            href="https://www.draftlogo.com/"
+            href="https://www.boltcreator.online/"
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium text-foreground underline-offset-4 hover:underline"
             aria-label="Visit draftlogo"
           >
-            draftlogo
+            BoltCreator
           </Link>{" "}
-          &ndash; a SaaS that helps founders generate professional, minimal
-          logos in seconds. I love crafting elegant web experiences, shipping
-          fast, and turning ideas into real products. <br />
-          <br />
+          &ndash; a SaaS that helps creators and founders generate clean,
+          professional thumbnails in seconds using AI. Inspired by modern AI
+          builders, it focuses on speed, simplicity, and high-converting visual
+          design. I love crafting elegant web experiences, shipping fast, and
+          turning ideas into real products. <br />
+          With built-in AI tag generation, keyword optimization, and social
+          growth tools, BoltCreator helps creators maximize reach, improve
+          visibility, and grow faster across platforms. <br />
           Previously, I&apos;ve worked with startups and shipped multiple
           projects. You can find more of my work on{" "}
           <Link
@@ -30,11 +34,11 @@ export default function Overview() {
             className="font-medium text-foreground underline-offset-4 hover:underline"
             aria-label="Visit twitter"
           >
-            @ratneshchipre
+            @RoshanS72056
           </Link>
           , explore my code on{" "}
           <Link
-            href="https://github.com/ratneshchipre"
+            href="https://github.com/roshann-sahu"
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium text-foreground underline-offset-4 hover:underline"
@@ -44,15 +48,15 @@ export default function Overview() {
           </Link>
           , or reach out via{" "}
           <Link
-            href="mailto:ratneshchipre@gmail.com"
+            href="mailto:hello.roshan004@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium text-foreground underline-offset-4 hover:underline"
-            aria-label="Mail to ratneshchipre"
+            aria-label="Mail to hello.roshan004@gmail.com"
           >
             email
           </Link>
-          <CopyButton value="ratneshchipre@gmail.com" className="ml-0.5" />
+          <CopyButton value="hello.roshan004@gmail.com" className="ml-0.5" />
         </p>
       </div>
     </section>
