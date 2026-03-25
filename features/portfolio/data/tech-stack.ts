@@ -1,0 +1,117 @@
+import { TechStack } from "@/features/portfolio/types/tech-stack";
+
+export const TECH_STACK: TechStack[] = [
+  {
+    id: "typescript",
+    title: "TypeScript",
+    href: "https://www.typescriptlang.org/",
+    categories: ["Language"],
+  },
+  {
+    id: "javascript",
+    title: "JavaScript",
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    categories: ["Language"],
+  },
+  {
+    id: "nodejs",
+    title: "Node.js",
+    href: "https://nodejs.org/",
+    categories: ["Runtime Environment"],
+  },
+  {
+    id: "expressjs",
+    title: "Express.js",
+    href: "https://expressjs.com/",
+    categories: ["Framework", "Backend"],
+    theme: true,
+  },
+  {
+    id: "bun",
+    title: "Bun",
+    href: "https://bun.sh/",
+    categories: ["Runtime Environment"],
+  },
+  {
+    id: "react",
+    title: "React",
+    href: "https://react.dev/",
+    categories: ["Library", "UI Library"],
+  },
+  {
+    id: "nextjs",
+    title: "Next.js",
+    href: "https://nextjs.org/",
+    categories: ["Framework"],
+    theme: true,
+  },
+  {
+    id: "better-auth",
+    title: "Better-Auth",
+    href: "https://www.better-auth.com/",
+    categories: ["Auth", "Library"],
+    theme: true,
+  },
+  {
+    id: "tailwindcss",
+    title: "TailwindCSS",
+    href: "https://tailwindcss.com/",
+    categories: ["Framework"],
+  },
+  {
+    id: "shadcn-ui",
+    title: "shadcn/ui",
+    href: "https://ui.shadcn.com/",
+    categories: ["Library", "Component Library"],
+    theme: true,
+  },
+  {
+    id: "motion",
+    title: "Motion",
+    href: "https://motion.dev/",
+    categories: ["Library", "Animation"],
+  },
+  {
+    id: "redux",
+    title: "Redux",
+    href: "https://redux.js.org/",
+    categories: ["State Management"],
+  },
+  {
+    id: "git",
+    title: "Git",
+    href: "https://git-scm.com/",
+    categories: ["Version Control"],
+  },
+  {
+    id: "mongodb",
+    title: "MongoDB",
+    href: "https://www.mongodb.com/",
+    categories: ["Database"],
+  },
+  {
+    id: "postgresql",
+    title: "PostgreSQL",
+    href: "https://www.postgresql.org/",
+    categories: ["Database", "SQL"],
+  },
+  {
+    id: "prisma",
+    title: "Prisma",
+    href: "https://www.prisma.io/",
+    categories: ["ORM", "Database"],
+    theme: true,
+  },
+  {
+    id: "supabase",
+    title: "Supabase",
+    href: "https://supabase.com/",
+    categories: ["BaaS", "Database"],
+  },
+  {
+    id: "figma",
+    title: "Figma",
+    href: "https://www.figma.com/",
+    categories: ["Tools", "Design"],
+  },
+];
