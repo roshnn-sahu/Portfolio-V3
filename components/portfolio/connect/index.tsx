@@ -24,7 +24,7 @@ export default function Connect() {
       id: "github",
       icon: GithubIcon,
       title: "GitHub",
-      url: "https://github.com/roshann-sahu",
+      url: "https://github.com/roshnn-sahu",
     },
     {
       id: "linkedin",
@@ -75,3 +75,4 @@ export default function Connect() {
     </section>
   );
 }
+

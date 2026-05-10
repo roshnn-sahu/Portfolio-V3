@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { GeistPixelSquare } from "geist/font/pixel";
 import "@/styles/globals.css";
+import SiteFooter from "@/components/site-footer";
+import SiteHeader from "@/components/site-header";
 import ThemeProvider from "@/components/theme-provider";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { defaultWebsiteMetadata } from "@/config/metadata";
 
 const geistSans = Geist({
@@ -32,11 +34,15 @@ export default function RootLayout({
         <ThemeProvider>
           <Toaster position="top-center" />
           <TooltipProvider>
-            <div className="container mx-auto md:max-w-161">{children}</div>
+            <div className="container mx-auto md:max-w-161  border border-x border-border">
+              <SiteHeader />
+              <main className="overflow-hidden px-5">{children}</main>
+              <SiteFooter />
+            </div>
           </TooltipProvider>
         </ThemeProvider>
-   
       </body>
     </html>
   );
 }
+

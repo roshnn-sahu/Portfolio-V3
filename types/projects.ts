@@ -8,3 +8,4 @@ export type Project = {
   skills: string[];
   isExpanded?: boolean;
 };
+

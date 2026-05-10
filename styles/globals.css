@@ -58,6 +58,8 @@
 
   --animate-fade-in: fade-in var(--tw-duration, 200ms) ease-out;
   --animate-fade-out: fade-out var(--tw-duration, 200ms) ease-out;
+--color-pattern :var(--color-neutral-300)
+
 
   @keyframes fade-in {
     from {

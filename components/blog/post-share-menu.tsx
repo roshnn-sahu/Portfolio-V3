@@ -15,7 +15,7 @@ import {
   NewTwitterIcon,
   Share03Icon,
 } from "@hugeicons/core-free-icons";
-import { copyText } from "@/utils/copy";
+import { copyText } from "@/lib/copy";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -95,3 +95,4 @@ export default function PostShareMenu({ url }: { url: string }) {
     </DropdownMenu>
   );
 }
+

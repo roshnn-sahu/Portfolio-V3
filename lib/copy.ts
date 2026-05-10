@@ -6,3 +6,4 @@ export async function copyText(text: string) {
     return false;
   }
 }
+

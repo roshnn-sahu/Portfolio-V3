@@ -72,3 +72,4 @@ export async function highlightCode(code: string, language: string = "tsx") {
 
   return html;
 }
+

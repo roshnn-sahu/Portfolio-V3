@@ -1,6 +1,6 @@
 import { NavItem } from "@/types/nav";
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL!;
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 
 export const SITE_CONFIG = {
   name: "Roshan",
@@ -45,3 +45,4 @@ export const NAV_ITEMS: NavItem[] = [
     href: "/collection",
   },
 ];
+

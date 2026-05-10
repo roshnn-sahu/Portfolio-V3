@@ -1,44 +1,42 @@
+"use client";
 import Link from "next/link";
 import CopyButton from "@/components/copy-button";
+import { motion } from "motion/react";
 
 export default function Overview() {
   return (
     <section className="font-geist-sans">
-      <div>
+      <motion.div>
         <p className="text-muted-foreground">
-          I&apos;m a 20yo Full-Stack Developer focused on building clean,
-          scalable web products. <br /> <br /> Currently, I&apos;m building{" "}
+          I&apos;m a 21yo Full-Stack Developer focused on building clean,
+          scalable web products. <br /> <br />
+          Currently, I&apos;m building{" "}
           <Link
             href="https://www.boltcreator.online/"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-foreground underline-offset-4 hover:underline"
+            className="font-medium text-foreground underline underline-offset-4"
             aria-label="Visit draftlogo"
           >
             BoltCreator
           </Link>{" "}
-          &ndash; a SaaS that helps creators and founders generate clean,
-          professional thumbnails in seconds using AI. Inspired by modern AI
-          builders, it focuses on speed, simplicity, and high-converting visual
-          design. I love crafting elegant web experiences, shipping fast, and
-          turning ideas into real products. <br />
-          With built-in AI tag generation, keyword optimization, and social
-          growth tools, BoltCreator helps creators maximize reach, improve
-          visibility, and grow faster across platforms. <br />
+          &ndash; an AI SaaS for professional thumbnails and social growth. I
+          focus on speed, simplicity, and shipping elegant web experiences.{" "}
+          <br />
           Previously, I&apos;ve worked with startups and shipped multiple
-          projects. You can find more of my work on{" "}
+          projects. Find more of my work on{" "}
           <Link
-            href="https://x.com/ratneshchipre"
+            href="https://x.com/hloRoshan"
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium text-foreground underline-offset-4 hover:underline"
             aria-label="Visit twitter"
           >
-            @RoshanS72056
+            @hloRoshan
           </Link>
           , explore my code on{" "}
           <Link
-            href="https://github.com/roshann-sahu"
+            href="https://github.com/roshnn-sahu"
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium text-foreground underline-offset-4 hover:underline"
@@ -58,7 +56,7 @@ export default function Overview() {
           </Link>
           <CopyButton value="hello.roshan004@gmail.com" className="ml-0.5" />
         </p>
-      </div>
+      </motion.div>
     </section>
   );
 }

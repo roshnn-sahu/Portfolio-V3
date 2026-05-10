@@ -38,7 +38,7 @@ import {
 import { Button } from "./ui/button";
 import { Kbd, KbdGroup } from "./ui/kbd";
 import { cn } from "@/lib/utils";
-import { Post } from "@/features/blog/types/post";
+import { Post } from "@/types/post";
 import { Separator } from "./ui/separator";
 import { InputGroupButton } from "./ui/input-group";
 
@@ -426,3 +426,4 @@ function postToCommandLinkItem(post: Post): CommandLinkItem {
     icon: isComponent ? ComputerIcon : TextAlignLeft01Icon,
   };
 }
+

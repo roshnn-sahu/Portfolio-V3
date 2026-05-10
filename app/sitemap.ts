@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllPosts } from "@/features/blog/data/posts";
+import { getAllPosts } from "@/lib/data/blog/posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "";
@@ -21,3 +21,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...routes, ...blogPosts];
 }
+

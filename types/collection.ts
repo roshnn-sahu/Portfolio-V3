@@ -19,3 +19,4 @@ export type Collection = {
   moviesAndShows: MediaItem[];
   books: BookItem[];
 };
+

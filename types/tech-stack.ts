@@ -5,3 +5,4 @@ export type TechStack = {
   categories: string[];
   theme?: boolean;
 };
+

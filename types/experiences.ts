@@ -19,3 +19,4 @@ export type Experience = {
   positions: ExperiencePosition[];
   isCurrentEmployer?: boolean;
 };
+

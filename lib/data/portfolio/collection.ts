@@ -1,4 +1,4 @@
-import { Collection } from "@/features/portfolio/types/collection";
+import { Collection } from "@/types/collection";
 
 export const COLLECTION: Collection = {
   moviesAndShows: [
@@ -54,3 +54,4 @@ export const COLLECTION: Collection = {
   ],
   books: [],
 };
+

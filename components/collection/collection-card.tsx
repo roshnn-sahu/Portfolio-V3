@@ -1,4 +1,4 @@
-import { CollectionItem } from "@/features/portfolio/types/collection";
+import { CollectionItem } from "@/types/collection";
 
 export default function CollectionCard({ item }: { item: CollectionItem }) {
   const meta = "director" in item ? item.director : item.author;
@@ -12,3 +12,4 @@ export default function CollectionCard({ item }: { item: CollectionItem }) {
     </div>
   );
 }
+

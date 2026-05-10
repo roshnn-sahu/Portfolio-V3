@@ -1,5 +1,5 @@
 import * as React from "react";
-import { getGitHubContributions } from "@/features/portfolio/data/github-contributions";
+import { getGitHubContributions } from "@/lib/data/portfolio/github-contributions";
 import GitHubGraph, { GitHubGraphFallback } from "./github-graph";
 
 export default function GitHubContributions() {
@@ -27,3 +27,4 @@ export default function GitHubContributions() {
     </section>
   );
 }
+

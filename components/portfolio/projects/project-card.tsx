@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/tooltip";
 import { LinkCircle02Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import type { Project } from "@/features/portfolio/types/projects";
+import type { Project } from "@/types/projects";
 import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
@@ -36,9 +36,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               {project.logo && (
                 <div className="shrink-0 select-none">
                   <img
-                    src={project.logo}
+                    src={project.logo||""}
                     alt={`${project.title} logo`}
-                    className="h-6 w-6"
+                    className="h-6 w-6 rounded-full"
                     itemProp="image"
                   />
                 </div>
@@ -138,3 +138,4 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     </article>
   );
 }
+

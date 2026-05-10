@@ -35,3 +35,4 @@ export default function NotFound({ className }: { className?: string }) {
     </div>
   );
 }
+

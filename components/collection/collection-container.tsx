@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { COLLECTION } from "@/features/portfolio/data/collection";
+import { COLLECTION } from "@/lib/data/portfolio/collection";
 import CollectionSection from "@/components/collection/collection-section";
 import CollectionFilter from "@/components/collection/collection-filter";
 import { Separator } from "@/components/ui/separator";
@@ -47,3 +47,4 @@ export default function CollectionContainer() {
     </div>
   );
 }
+

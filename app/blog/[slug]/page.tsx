@@ -7,9 +7,9 @@ import {
   findNeighbour,
   getAllPosts,
   getPostBySlug,
-} from "@/features/blog/data/posts";
+} from "@/lib/data/blog/posts";
 import { MDX } from "@/components/mdx";
-import { Post } from "@/features/blog/types/post";
+import { Post } from "@/types/post";
 import { Button } from "@/components/ui/button";
 import { Prose } from "@/components/ui/typography";
 import { HugeiconsIcon } from "@hugeicons/react";

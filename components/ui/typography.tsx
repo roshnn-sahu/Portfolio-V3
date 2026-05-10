@@ -107,3 +107,4 @@ function Heading<T extends HeadingTypes = "h1">({
 }
 
 export { Code, Heading, Prose, ProseMono };
+

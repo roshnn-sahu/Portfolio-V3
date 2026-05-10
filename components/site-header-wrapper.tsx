@@ -3,3 +3,4 @@ export default function SiteHeaderWrapper(
 ) {
   return <header {...props} />;
 }
+

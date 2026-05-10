@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { getAllPosts } from "@/features/blog/data/posts";
+import { getAllPosts } from "@/lib/data/blog/posts";
 import { generateWebsiteMetadata } from "@/config/metadata";
 
 export const metadata: Metadata = generateWebsiteMetadata({
@@ -57,3 +57,4 @@ export default function BlogPage() {
     </section>
   );
 }
+

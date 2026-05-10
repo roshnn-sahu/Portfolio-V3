@@ -96,11 +96,11 @@ export default function SiteFooter() {
             Built by{" "}
             <a
               className="text-foreground underline-offset-4 hover:underline"
-              href="https://x.com/RoshanS72056"
+              href="https://x.com/hloRoshan"
               target="_blank"
               rel="noopener"
             >
-              Roshan
+             @hloRoshan
             </a>
             . The source code is available on{" "}
             <a
@@ -118,3 +118,4 @@ export default function SiteFooter() {
     </footer>
   );
 }
+

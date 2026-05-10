@@ -2,13 +2,13 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import { cache } from "react";
-import { Post, PostMetadata } from "@/features/blog/types/post";
+import { Post } from "@/types/post";
 
 function parseFrontmatter(fileContent: string) {
   const file = matter(fileContent);
 
   return {
-    metadata: file.data as PostMetadata,
+    metadata: file.data as any,
     content: file.content,
   };
 }
@@ -39,7 +39,7 @@ function getMDXData(dir: string) {
 }
 
 export const getAllPosts = cache(() => {
-  return getMDXData(path.join(process.cwd(), "features/blog/content")).sort(
+  return getMDXData(path.join(process.cwd(), "lib/content/blog")).sort(
     (a, b) => {
       //   if (a.metadata.pinned && !b.metadata.pinned) return -1;
       //   if (!a.metadata.pinned && b.metadata.pinned) return 1;
@@ -74,3 +74,4 @@ export function findNeighbour(posts: Post[], slug: string) {
 
   return { previous: null, next: null };
 }
+

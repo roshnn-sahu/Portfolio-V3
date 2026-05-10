@@ -115,3 +115,4 @@ export function IconLogo(props: React.SVGProps<SVGSVGElement>) {
     </>
   );
 }
+

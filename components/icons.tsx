@@ -114,3 +114,4 @@ export function getIconForPackageManager(manager: string) {
       return <HugeiconsIcon icon={ComputerTerminal01Icon} />;
   }
 }
+

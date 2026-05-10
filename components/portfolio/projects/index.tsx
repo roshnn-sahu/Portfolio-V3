@@ -1,5 +1,5 @@
 import ProjectCard from "./project-card";
-import { PROJECTS } from "@/features/portfolio/data/projects";
+import { PROJECTS } from "@/lib/data/portfolio/projects";
 import { Separator } from "@/components/ui/separator";
 
 export default function Projects() {

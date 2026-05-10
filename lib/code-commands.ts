@@ -53,3 +53,4 @@ export function getNpmCommands(raw: string): NpmCommands | null {
 
   return null;
 }
+

@@ -23,7 +23,7 @@ import { cn } from "@/lib/utils";
 import {
   Experience,
   ExperiencePosition,
-} from "@/features/portfolio/types/experiences";
+} from "@/types/experiences";
 
 interface ExperienceCardProps {
   experience: Experience;
@@ -179,9 +179,9 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
             <Image
               src={companyLogo}
               alt={`${companyName} logo`}
-              width={24}
-              height={24}
-              className="rounded-full"
+              width={30}
+              height={30}
+              className="rounded-full border dark:bg-white h-6 w-8"
               unoptimized
             />
           ) : (
@@ -271,3 +271,4 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
     </article>
   );
 }
+
