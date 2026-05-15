@@ -2,6 +2,34 @@ import { Project } from "@/types/projects";
 
 export const PROJECTS: Project[] = [
   {
+    id: "documate-ai",
+    title: "Documate AI - AI-powered thumbnail generator for social growth",
+    logo: "/images/projects/documate-ai.png",
+    description:
+      "Documate AI is an AI SaaS designed to help creators generate professional thumbnails in seconds, focusing on speed, simplicity, and driving social engagement.",
+    features: [
+      "Instantly generates eye-catching thumbnails using advanced AI models.",
+      "Specifically optimized for social media growth and high click-through rates.",
+      "Clean, minimalist interface designed for a fast and efficient workflow.",
+      "Supports customizable templates tailored for different niches and platforms.",
+      "Integrated tools for testing and refining thumbnail performance.",
+    ],
+    link: "https://www.boltcreator.online/",
+    skills: [
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "AI Integration",
+      "RAG System",
+      "shadcn/ui",
+      "Razorpay",
+      "Express.js",
+      "MongoDB",
+      "Clerk Auth",
+    ],
+    isExpanded: true,
+  },
+  {
     id: "boltcreator",
     title: "BoltCreator - AI-powered thumbnail generator for social growth",
     logo: "/images/project-logos/boltcreator.jpg",
@@ -22,8 +50,11 @@ export const PROJECTS: Project[] = [
       "AI Integration",
       "shadcn/ui",
       "Razorpay",
+      "Express.js",
+      "MongoDB",
+      "Clerk Auth",
     ],
-    isExpanded: true,
+    isExpanded: false,
   },
   {
     id: "beatwave",

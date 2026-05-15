@@ -18,7 +18,7 @@ export const getGitHubContributions = unstable_cache(
     console.info(`Fetching GitHub contributions for ${GITHUB_USERNAME}...`);
 
     try {
-      const res = await fetch(`${apiUrl}/v4/${GITHUB_USERNAME}?y=last`);
+      const res = await fetch(`${apiUrl}/v4/${GITHUB_USERNAME}?y=${new Date().getFullYear()}`);
       if (!res.ok) {
         console.error(
           `GitHub contributions API returned ${res.status} for ${GITHUB_USERNAME}`
@@ -38,4 +38,3 @@ export const getGitHubContributions = unstable_cache(
   ["github-contributions"],
   { revalidate: 86400 } // Cache for 1 day (86400 seconds)
 );
-
