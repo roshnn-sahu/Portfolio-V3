@@ -3,30 +3,42 @@ import { Project } from "@/types/projects";
 export const PROJECTS: Project[] = [
   {
     id: "documate-ai",
-    title: "Documate AI - AI-powered thumbnail generator for social growth",
-    logo: "/images/projects/documate-ai.png",
+    title: "DocumateAI – RAG-Based AI Document Chatbot",
+    logo: "/images/project-logos/documate.png",
     description:
-      "Documate AI is an AI SaaS designed to help creators generate professional thumbnails in seconds, focusing on speed, simplicity, and driving social engagement.",
+      "DocumateAI is an AI-powered document chatbot that enables users to upload PDFs, DOCX files, and notes, then interact with them through contextual question-answering using Retrieval-Augmented Generation (RAG) and semantic search.",
+
     features: [
-      "Instantly generates eye-catching thumbnails using advanced AI models.",
-      "Specifically optimized for social media growth and high click-through rates.",
-      "Clean, minimalist interface designed for a fast and efficient workflow.",
-      "Supports customizable templates tailored for different niches and platforms.",
-      "Integrated tools for testing and refining thumbnail performance.",
+      "Built an AI-powered document chatbot using RAG architecture for contextual Q&A from uploaded documents.",
+
+      "Implemented vector embeddings and semantic search to retrieve highly relevant document context before generating AI responses.",
+
+      "Designed scalable document indexing and retrieval pipelines for fast and accurate document understanding.",
+
+      "Supports multiple document formats including PDFs, DOCX files, and text notes.",
+
+      "Built a clean and responsive chat-based interface for seamless real-time interaction with uploaded documents.",
+
+      "Focused on performance optimization for low-latency AI responses and efficient document processing.",
     ],
-    link: "https://www.boltcreator.online/",
+
+    link: "https://your-documate-live-link.com",
+
     skills: [
       "Next.js",
       "TypeScript",
-      "TailwindCSS",
-      "AI Integration",
-      "RAG System",
-      "shadcn/ui",
-      "Razorpay",
+      "Tailwind CSS",
+      "Node.js",
       "Express.js",
       "MongoDB",
-      "Clerk Auth",
+      "RAG Architecture",
+      "Vector Embeddings",
+      "Semantic Search",
+      "AI Integration",
+      "File Upload Handling",
+      "shadcn/ui",
     ],
+
     isExpanded: true,
   },
   {
@@ -73,5 +85,4 @@ export const PROJECTS: Project[] = [
     skills: ["Next.js", "React", "TailwindCSS", "Cashfree", "Motion", "Vite"],
     isExpanded: false,
   },
-
 ];
