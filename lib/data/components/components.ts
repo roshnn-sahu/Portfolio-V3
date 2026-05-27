@@ -1,14 +1,50 @@
+import { BlurShimmerText } from "@/registry/blur-shimmer-text";
+
 export const components = [
   {
-    title: "Animated Navbar",
-    slug: "animated-navbar",
-    description: "Modern responsive navbar",
-    category: "Navigation",
-  },
-  {
-    title: "Glow Button",
-    slug: "glow-button",
-    description: "Animated glowing button",
-    category: "Buttons",
+    slug: "blur-shimmer-text",
+
+    title: "Blur Shimmer Text",
+
+    description:
+      "A text component that loops phrases with a horizontal blur shimmer.",
+
+    component: BlurShimmerText,
+
+    installation: {
+      npm: "npx shadcn@latest add https://your-site.com/r/blur-shimmer-text.json",
+
+      pnpm: "pnpm dlx shadcn@latest add https://your-site.com/r/blur-shimmer-text.json",
+
+      yarn: "yarn dlx shadcn@latest add https://your-site.com/r/blur-shimmer-text.json",
+    },
+
+    usage: `
+import { BlurShimmerText } from "@/components/blur-shimmer-text"
+
+export default function Demo() {
+  return (
+    <BlurShimmerText
+      texts={["Open to Work"]}
+    />
+  )
+}
+`,
+
+    props: [
+      {
+        name: "texts",
+        type: "string[]",
+        default: "-",
+        description: "Phrases for the blur shimmer text.",
+      },
+
+      {
+        name: "className",
+        type: "string",
+        default: "-",
+        description: "Custom class names.",
+      },
+    ],
   },
 ];
