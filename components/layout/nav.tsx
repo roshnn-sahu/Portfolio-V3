@@ -1,9 +1,10 @@
 import { cn } from "@/lib/utils";
 import type { NavItem } from "@/types/nav";
+import Link from "next/link";
 
 function NavItem({ title, href, className }: NavItem & { className?: string }) {
   return (
-    <a
+    <Link
       href={href}
       className={cn(
         "font-geist-pixel-square text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
@@ -11,7 +12,7 @@ function NavItem({ title, href, className }: NavItem & { className?: string }) {
       )}
     >
       {title}
-    </a>
+    </Link>
   );
 }
 

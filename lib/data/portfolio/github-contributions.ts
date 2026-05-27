@@ -11,14 +11,14 @@ type GitHubContributionsResponse = {
 
 export const getGitHubContributions = unstable_cache(
   async () => {
-    const apiUrl =
-      process.env.GITHUB_CONTRIBUTIONS_API_URL ||
-      "https://github-contributions-api.jogruber.de";
-
+    const apiUrl =process.env.GITHUB_CONTRIBUTIONS_API_URL || "https://github-contributions-api.jogruber.de";
+ 
     console.info(`Fetching GitHub contributions for ${GITHUB_USERNAME}...`);
 
     try {
-      const res = await fetch(`${apiUrl}/v4/${GITHUB_USERNAME}?y=${new Date().getFullYear()}`);
+      const res = await fetch(
+        `${apiUrl}/v4/${GITHUB_USERNAME}?y=${new Date().getFullYear()}`
+      );
       if (!res.ok) {
         console.error(
           `GitHub contributions API returned ${res.status} for ${GITHUB_USERNAME}`
