@@ -17,8 +17,7 @@ export default function CTA() {
             Let&apos;s talk
           </h2>
           <p className="font-geist-sans text-sm text-muted-foreground sm:text-base">
-            What&apos;s the best way to start? <br /> A quick call to understand
-            your idea and see if we click.
+            What&apos;s the best way to start? <br /> Open to full-time roles, freelance projects, and collaborations.
           </p>
         </div>
         <div className="flex">

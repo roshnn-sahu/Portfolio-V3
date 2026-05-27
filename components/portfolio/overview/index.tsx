@@ -24,7 +24,7 @@ export default function Overview() {
           &ndash; a RAG-based AI document chatbot enabling contextual
           conversations with PDFs and documents using semantic search and vector
           embeddings. <br /><br />
-          Over the past 1.5+ years, I’ve worked on production-grade products
+          Over the past years, I’ve worked on production-grade products
           across AI SaaS, e-commerce, finance, and sports industries, focusing
           on scalable architecture, performance, and modern user experiences.{" "}
           <br /><br />

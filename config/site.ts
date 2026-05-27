@@ -5,11 +5,11 @@ const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 export const SITE_CONFIG = {
   name: "Roshan",
   description:
-    "I'm Roshan, a Full-Stack Web Developer. I love to build products.",
+    "Full Stack MERN Developer specializing in React.js, Next.js, Node.js, and AI-powered SaaS products. Based in India, open to remote opportunities.",
   url: baseUrl,
   ogImage: `${baseUrl}/images/opengraph-image.png`,
   links: {
-    twitter: "https://x.com/RoshanS72056",
+    twitter: "https://x.com/hloRoshan",
     github: "https://github.com/roshnn-sahu",
   },
   keywords: [
@@ -45,4 +45,3 @@ export const NAV_ITEMS: NavItem[] = [
     href: "/collection",
   },
 ];
-
