@@ -13,7 +13,7 @@ export const EXPERIENCES: Experience[] = [
         employmentPeriod: {
           start: "July 2025",
         },
-        employmentType: "Internship",
+        employmentType: "",
         description: [
           "Built and optimized the frontend for finusmart.com, a personalized protection marketplace providing tailored insurance and wellness solutions.",
           "Developed a high-performance e-commerce platform for meatwaala.com, focusing on a seamless product catalog and doorstep delivery experience for fresh meat.",

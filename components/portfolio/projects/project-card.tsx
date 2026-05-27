@@ -38,7 +38,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                   <img
                     src={project.logo||""}
                     alt={`${project.title} logo`}
-                    className="h-6 w-6 rounded-full"
+                    className="h-6 w-6 rounded-full border"
                     itemProp="image"
                   />
                 </div>
