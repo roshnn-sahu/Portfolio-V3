@@ -18,11 +18,10 @@ export default function ProfileHeader() {
         <div className="leading-tight">
           <h2 className="font-geist-sans text-lg font-medium">Roshan Sahu</h2>
           <p className="font-geist-pixel-square text-muted-foreground">
-            Full-Stack Web Developer
+            Full-Stack MERN Developer
           </p>
         </div>
       </div>
     </div>
   );
 }
-

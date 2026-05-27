@@ -8,9 +8,10 @@ export default function Overview() {
     <section className="font-geist-sans">
       <motion.div>
         <p className="text-muted-foreground">
-          I&apos;m a 21yo Full-Stack Developer focused on building clean,
-          scalable web products. <br /> <br />
-          Currently, I&apos;m building{" "}
+          I build scalable web applications, AI-powered SaaS products, and
+          modern digital experiences focused on performance, usability, and
+          clean architecture. <br /> <br />
+          Currently building{" "}
           <Link
             href="https://www.boltcreator.online/"
             target="_blank"
@@ -18,13 +19,16 @@ export default function Overview() {
             className="font-medium text-foreground underline underline-offset-4"
             aria-label="Visit draftlogo"
           >
-            BoltCreator
+            DocumateAI
           </Link>{" "}
-          &ndash; an AI SaaS for professional thumbnails and social growth. I
-          focus on speed, simplicity, and shipping elegant web experiences.{" "}
-          <br />
-          Previously, I&apos;ve worked with startups and shipped multiple
-          projects. Find more of my work on{" "}
+          &ndash; a RAG-based AI document chatbot enabling contextual
+          conversations with PDFs and documents using semantic search and vector
+          embeddings. <br />
+          With 1.5+ years of professional experience, I&apos;ve delivered
+          production-grade applications across AI SaaS, e-commerce, finance, and
+          sports industries using React.js, Next.js, Node.js, Express.js, and
+          MongoDB. <br />
+           Find more of my work on{" "}
           <Link
             href="https://x.com/hloRoshan"
             target="_blank"

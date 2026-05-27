@@ -9,7 +9,7 @@ export const EXPERIENCES: Experience[] = [
     positions: [
       {
         id: "1",
-        title: "Frontend Developer",
+        title: "Full Stack MERN Developer",
         employmentPeriod: {
           start: "July 2025",
         },
@@ -22,13 +22,15 @@ export const EXPERIENCES: Experience[] = [
           "Collaborated on full-stack features using Express and MongoDB to handle real-time data and status monitoring for multiple client projects.",
         ],
         skills: [
-       
           "Next.js",
           "TypeScript",
           "Motion",
           "Node.js",
           "Express.js",
           "MongoDB",
+          "AWS",
+          "AI Integration",
+          "Vercel"
         ],
         isExpanded: true,
       },
