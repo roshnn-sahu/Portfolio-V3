@@ -23,12 +23,12 @@ export default function Overview() {
           </Link>{" "}
           &ndash; a RAG-based AI document chatbot enabling contextual
           conversations with PDFs and documents using semantic search and vector
-          embeddings. <br />
-          With 1.5+ years of professional experience, I&apos;ve delivered
-          production-grade applications across AI SaaS, e-commerce, finance, and
-          sports industries using React.js, Next.js, Node.js, Express.js, and
-          MongoDB. <br />
-           Find more of my work on{" "}
+          embeddings. <br /><br />
+          Over the past 1.5+ years, I’ve worked on production-grade products
+          across AI SaaS, e-commerce, finance, and sports industries, focusing
+          on scalable architecture, performance, and modern user experiences.{" "}
+          <br /><br />
+          Find more of my work on{" "}
           <Link
             href="https://x.com/hloRoshan"
             target="_blank"

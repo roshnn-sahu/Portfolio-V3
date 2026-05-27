@@ -2,6 +2,18 @@ import { TechStack } from "@/types/tech-stack";
 
 export const TECH_STACK: TechStack[] = [
   {
+    id: "typescript",
+    title: "TypeScript",
+    href: "https://www.typescriptlang.org/",
+    categories: ["Language"],
+  },
+  {
+    id: "react",
+    title: "React",
+    href: "https://react.dev/",
+    categories: ["Library", "UI Library"],
+  },
+  {
     id: "nextjs",
     title: "Next.js",
     href: "https://nextjs.org/",
@@ -9,10 +21,35 @@ export const TECH_STACK: TechStack[] = [
     theme: true,
   },
   {
-    id: "typescript",
-    title: "TypeScript",
-    href: "https://www.typescriptlang.org/",
-    categories: ["Language"],
+    id: "tailwindcss",
+    title: "TailwindCSS",
+    href: "https://tailwindcss.com/",
+    categories: ["Framework"],
+  },
+  {
+    id: "shadcn-ui",
+    title: "shadcn/ui",
+    href: "https://ui.shadcn.com/",
+    categories: ["Library", "Component Library"],
+    theme: true,
+  },
+  {
+    id: "motion",
+    title: "Motion",
+    href: "https://motion.dev/",
+    categories: ["Library", "Animation"],
+  },
+  {
+    id: "gsap",
+    title: "Gsap",
+    href: "https://gsap.com/",
+    categories: ["Animation"],
+  },
+  {
+    id: "redux",
+    title: "Redux",
+    href: "https://redux.js.org/",
+    categories: ["State Management"],
   },
   {
     id: "nodejs",
@@ -35,36 +72,31 @@ export const TECH_STACK: TechStack[] = [
     theme: false,
   },
   {
-    id: "react",
-    title: "React",
-    href: "https://react.dev/",
-    categories: ["Library", "UI Library"],
-  },
-
-  {
-    id: "tailwindcss",
-    title: "TailwindCSS",
-    href: "https://tailwindcss.com/",
-    categories: ["Framework"],
+    id: "supabase",
+    title: "Supabase",
+    href: "https://www.supabase.com/",
+    categories: ["Database"],
+    theme: false,
   },
   {
-    id: "shadcn-ui",
-    title: "shadcn/ui",
-    href: "https://ui.shadcn.com/",
-    categories: ["Library", "Component Library"],
+    id: "better-auth",
+    title: "Better Auth",
+    href: "https://betterauth.com/",
+    categories: ["Auth"],
     theme: true,
   },
   {
-    id: "motion",
-    title: "Motion",
-    href: "https://motion.dev/",
-    categories: ["Library", "Animation"],
+    id: "aws",
+    title: "AWS",
+    href: "https://aws.amazon.com/",
+    categories: ["Web Services"],
+    theme: true,
   },
   {
-    id: "redux",
-    title: "Redux",
-    href: "https://redux.js.org/",
-    categories: ["State Management"],
+    id: "docker",
+    title: "Docker",
+    href: "https://www.docker.com/",
+    categories: ["Containerization"],
   },
   {
     id: "git",
@@ -72,12 +104,4 @@ export const TECH_STACK: TechStack[] = [
     href: "https://git-scm.com/",
     categories: ["Version Control"],
   },
-  {
-    id: "gsap",
-    title: "Gsap",
-    href: "https://gsap.com/",
-    categories: ["Animation "],
-  },
-  
 ];
-
