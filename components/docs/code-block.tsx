@@ -8,11 +8,13 @@ import {
 
 export function CodeBlock({
   code,
+  html,
 }: {
   code: string;
+  html?: string;
 }) {
   return (
-    <div className="relative rounded-2xl border bg-zinc-950 p-6 text-sm text-zinc-100">
+    <div className="relative rounded-b-2xl border bg-zinc-950 p-6 text-sm text-zinc-100">
       
       {/* Copy Button */}
       <button
@@ -29,9 +31,15 @@ export function CodeBlock({
       </button>
 
       {/* Code */}
-      <pre className="overflow-x-auto">
-        <code>{code}</code>
-      </pre>
+      <div className="overflow-x-auto">
+        {html ? (
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+        ) : (
+          <pre>
+            <code>{code}</code>
+          </pre>
+        )}
+      </div>
     </div>
   );
 }
