@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "roshn-sahu",
+  "homepage": "https://roshn-sahu.vercel.app",
+  "items": [
+    {
+      "name": "blur-shimmer-text",
+      "type": "registry:ui",
+      "title": "Blur Shimmer Text",
+      "description": "A text component that loops phrases with a horizontal blur shimmer.",
+      "files": [
+        {
+          "path": "registry/default/blur-shimmer-text/blur-shimmer-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

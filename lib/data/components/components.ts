@@ -1,4 +1,4 @@
-import { BlurShimmerText } from "@/registry/blur-shimmer-text";
+import { BlurShimmerText } from "@/registry/default/blur-shimmer-text/blur-shimmer-text";
 
 export const components = [
   {
@@ -12,11 +12,11 @@ export const components = [
     component: BlurShimmerText,
 
     installation: {
-      npm: "npx shadcn@latest add https://your-site.com/r/blur-shimmer-text.json",
+      npm: "npx shadcn@latest add http://localhost:3000/r/blur-shimmer-text.json",
 
-      pnpm: "pnpm dlx shadcn@latest add https://your-site.com/r/blur-shimmer-text.json",
+      pnpm: "pnpm dlx shadcn@latest add http://localhost:3000/r/blur-shimmer-text.json",
 
-      yarn: "yarn dlx shadcn@latest add https://your-site.com/r/blur-shimmer-text.json",
+      yarn: "yarn dlx shadcn@latest add http://localhost:3000/r/blur-shimmer-text.json",
     },
 
     usage: `
