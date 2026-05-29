@@ -9,14 +9,13 @@ import {
 } from "@hugeicons/core-free-icons";
 
 import { components } from "@/lib/data/components/components";
-import { highlightCode } from "@/lib/highlight-code";
 
-import { InstallTabs } from "@/components/docs/install-tabs";
-import { CodeBlock } from "@/components/docs/code-block";
-import { PropsTable } from "@/components/docs/props-table";
+import { CodeBlock } from "@/components/code-block";
+import { CodeBlockServer } from "@/components/code-block-server";
+import { ComponentPreview } from "@/components/component-preview";
+import { InstallTabs } from "@/components/install-tabs";
+import { PropsTable } from "@/components/props-table";
 import { MDX } from "@/components/mdx";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { ClientPreviewWrapper } from "@/components/docs/client-preview-wrapper";
 
 interface Props {
   params: Promise<{
@@ -56,8 +55,11 @@ export default async function ComponentSlugPage({
     notFound();
   }
 
-  // Load component usage highlighted code
-  const highlightedUsage = await highlightCode(component.usage, "tsx");
+  // Registry URL for install tabs
+  const registryUrl =
+    typeof component.installation === "string"
+      ? component.installation
+      : "";
 
   // Prev / Next index calculations
   const currentIndex = components.findIndex(
@@ -144,34 +146,13 @@ export default async function ComponentSlugPage({
 
         {/* 1. COMPONENT PREVIEW & CODE TABS */}
         <section className="space-y-4">
-          <Tabs defaultValue="preview" className="w-full">
-            <div className="flex items-center justify-between border-b pb-1.5">
-              <TabsList variant="line" className="h-9">
-                <TabsTrigger value="preview" className="px-4 text-sm font-medium">
-                  Preview
-                </TabsTrigger>
-                <TabsTrigger value="code" className="px-4 text-sm font-medium">
-                  Code
-                </TabsTrigger>
-              </TabsList>
-            </div>
-
-            {/* Preview Tab Area */}
-            <TabsContent value="preview" className="mt-4 focus-visible:outline-hidden">
-              <ClientPreviewWrapper>
-                <PreviewComponent />
-              </ClientPreviewWrapper>
-            </TabsContent>
-
-            {/* Usage Code Tab Area */}
-            <TabsContent value="code" className="mt-4 focus-visible:outline-hidden">
-              <CodeBlock
-                code={component.usage}
-                html={highlightedUsage}
-                filename={`components/${slug}.tsx`}
-              />
-            </TabsContent>
-          </Tabs>
+          <ComponentPreview
+            preview={<PreviewComponent />}
+            code={component.usage}
+            filename={`components/${slug}.tsx`}
+          >
+            <CodeBlockServer code={component.usage} language="tsx" />
+          </ComponentPreview>
         </section>
 
         {/* 2. COMPONENT INSTALLATION */}
@@ -179,7 +160,7 @@ export default async function ComponentSlugPage({
           <h2 className="text-2xl font-bold tracking-tight">
             Installation
           </h2>
-          <InstallTabs installation={component.installation} />
+          <InstallTabs url={registryUrl} />
         </section>
 
         {/* 3. USAGE */}
@@ -194,9 +175,11 @@ export default async function ComponentSlugPage({
           </div>
           <CodeBlock
             code={component.usage}
-            html={highlightedUsage}
+            language="tsx"
             filename={`components/${slug}.tsx`}
-          />
+          >
+            <CodeBlockServer code={component.usage} language="tsx" />
+          </CodeBlock>
         </section>
 
         {/* 4. API REFERENCE / PROPS TABLE */}

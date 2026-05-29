@@ -72,7 +72,7 @@ export function CodeBlock({
               dangerouslySetInnerHTML={{ __html: html }}
             />
           ) : (
-            <pre className="m-0 bg-transparent p-0">
+            <pre className="m-0 bg-zinc-800 p-0">
               <code>{code}</code>
             </pre>
           )}

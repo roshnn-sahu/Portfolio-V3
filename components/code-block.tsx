@@ -6,16 +6,18 @@ import { cn } from "@/lib/utils";
 
 interface CodeBlockProps {
   code: string;
+  language?: "tsx" | "ts" | "jsx" | "js" | "bash" | "json" | "css";
   filename?: string;
-  language?: string;
   className?: string;
+  children?: React.ReactNode;
 }
 
 export function CodeBlock({
   code,
+  language = "tsx",
   filename,
-  language,
   className,
+  children,
 }: CodeBlockProps) {
   const [hasCopied, setHasCopied] = React.useState(false);
 
@@ -25,40 +27,43 @@ export function CodeBlock({
     setTimeout(() => setHasCopied(false), 2000);
   }, [code]);
 
+  const isBash = language === "bash";
+
   return (
     <div
       className={cn(
-        "group overflow-hidden rounded-xl border border-border/60 bg-zinc-950 shadow-xs",
+        "group overflow-hidden rounded-lg border border-zinc-800 shadow-xs",
         className
       )}
     >
-      {/* Filename Header */}
-      <div className="flex items-center justify-between border-b border-white/10 bg-zinc-900/50 px-4 py-2.5">
+      {/* Top bar with filename or language indicator */}
+      <div className="flex items-center justify-between border-b border-zinc-800 bg-zinc-900 px-4 py-2">
         <div className="flex items-center gap-2">
-          <Terminal className="size-3.5 text-zinc-500" />
-          {filename ? (
-            <>
-              <FileCode className="size-3.5 text-zinc-500" />
-              <span className="font-mono text-[0.75rem] text-zinc-400">
-                {filename}
-              </span>
-            </>
+          {isBash ? (
+            <Terminal className="size-3.5 text-zinc-500" />
+          ) : filename ? (
+            <FileCode className="size-3.5 text-zinc-500" />
           ) : (
-            language && (
-              <span className="font-mono text-[0.7rem] uppercase text-zinc-600">
-                {language}
-              </span>
-            )
+            <Terminal className="size-3.5 text-zinc-500" />
           )}
+          <span className="font-mono text-xs text-zinc-400">
+            {filename ?? (isBash ? "terminal" : language)}
+          </span>
         </div>
       </div>
 
-      {/* Code Body */}
-      <div className="relative">
-        {/* Copy Button */}
+      {/* Code area with copy button */}
+      <div className="relative bg-code">
+        {/* Copy button */}
         <button
           onClick={handleCopy}
-          className="absolute top-3 right-3 z-10 flex size-7 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900/80 text-zinc-400 opacity-0 backdrop-blur-xs transition-all hover:border-zinc-700 hover:bg-zinc-800 hover:text-white group-hover:opacity-100 focus:opacity-100"
+          className={cn(
+            "absolute top-3 right-3 z-10 flex size-7 items-center justify-center",
+            "rounded-md border border-zinc-800 bg-zinc-900/80 text-zinc-400",
+            "opacity-0 backdrop-blur-xs transition-all",
+            "hover:border-zinc-700 hover:bg-zinc-800 hover:text-white",
+            "group-hover:opacity-100 focus:opacity-100"
+          )}
           title="Copy code"
         >
           {hasCopied ? (
@@ -68,14 +73,16 @@ export function CodeBlock({
           )}
         </button>
 
-        {/* Code */}
-        <div className="overflow-x-auto p-4 pt-3">
-          <pre className="m-0 bg-transparent p-0">
-            <code className="block font-mono text-[0.8125rem] leading-relaxed text-zinc-100">
-              {code}
-            </code>
-          </pre>
-        </div>
+        {/* Pre-highlighted code from server (children), or raw fallback */}
+        {children ?? (
+          <div className="overflow-x-auto p-4 pt-3">
+            <pre className="m-0 p-0">
+              <code className="block font-mono text-[0.8125rem] leading-relaxed text-zinc-100">
+                {code}
+              </code>
+            </pre>
+          </div>
+        )}
       </div>
     </div>
   );

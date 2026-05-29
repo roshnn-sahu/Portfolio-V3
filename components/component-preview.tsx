@@ -8,9 +8,11 @@ import { CodeBlock } from "@/components/code-block";
 interface ComponentPreviewProps {
   preview: React.ReactNode;
   code: string;
+  filename?: string;
+  children?: React.ReactNode;
 }
 
-export function ComponentPreview({ preview, code }: ComponentPreviewProps) {
+export function ComponentPreview({ preview, code, filename, children }: ComponentPreviewProps) {
   const [key, setKey] = React.useState(0);
 
   const handleReset = () => {
@@ -23,13 +25,13 @@ export function ComponentPreview({ preview, code }: ComponentPreviewProps) {
         <TabsList variant="line" className="h-9">
           <TabsTrigger
             value="preview"
-            className="px-4 text-sm font-medium"
+            className="rounded-none px-4 text-sm font-medium"
           >
             Preview
           </TabsTrigger>
           <TabsTrigger
             value="code"
-            className="px-4 text-sm font-medium"
+            className="rounded-none px-4 text-sm font-medium"
           >
             Code
           </TabsTrigger>
@@ -37,17 +39,20 @@ export function ComponentPreview({ preview, code }: ComponentPreviewProps) {
       </div>
 
       {/* Preview Tab */}
-      <TabsContent value="preview" className="mt-4 focus-visible:outline-hidden">
-        <div className="relative flex min-h-[350px] w-full items-center justify-center overflow-hidden rounded-xl border bg-background p-10">
+      <TabsContent
+        value="preview"
+        className="mt-4 focus-visible:outline-hidden"
+      >
+        <div className="relative flex min-h-[350px] w-full items-center justify-center overflow-hidden rounded-xl border bg-[#09090b] p-10 ring-1 ring-inset ring-white/5">
           {/* Dot grid background */}
           <div
-            className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-zinc-950 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:16px_16px] opacity-60"
+            className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:16px_16px] opacity-60"
           />
 
           {/* Refresh button */}
           <button
             onClick={handleReset}
-            className="absolute top-3 right-3 z-10 flex size-7 items-center justify-center rounded-md border border-zinc-200 bg-white/70 text-zinc-500 backdrop-blur-xs transition-all hover:bg-zinc-50 hover:text-foreground dark:border-zinc-800 dark:bg-zinc-900/70 dark:text-zinc-400 dark:hover:bg-zinc-800"
+            className="absolute top-3 right-3 z-10 flex size-7 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900/70 text-zinc-400 backdrop-blur-xs transition-all hover:border-zinc-700 hover:bg-zinc-800 hover:text-white"
             title="Restart animation"
           >
             <RotateCw className="size-3.5 transition-transform active:rotate-180 duration-300" />
@@ -61,8 +66,13 @@ export function ComponentPreview({ preview, code }: ComponentPreviewProps) {
       </TabsContent>
 
       {/* Code Tab */}
-      <TabsContent value="code" className="mt-4 focus-visible:outline-hidden">
-        <CodeBlock code={code} language="tsx" />
+      <TabsContent
+        value="code"
+        className="mt-4 focus-visible:outline-hidden"
+      >
+        <CodeBlock code={code} language="tsx" filename={filename}>
+          {children}
+        </CodeBlock>
       </TabsContent>
     </Tabs>
   );

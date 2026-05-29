@@ -3,6 +3,7 @@ import { ChevronRight } from "lucide-react";
 
 import { ComponentPreview } from "@/components/component-preview";
 import { CodeBlock } from "@/components/code-block";
+import { CodeBlockServer } from "@/components/code-block-server";
 import { InstallTabs } from "@/components/install-tabs";
 import { PropsTable } from "@/components/props-table";
 
@@ -80,7 +81,9 @@ export function ComponentPage({
               Import the component in your project.
             </p>
           </div>
-          <CodeBlock code={usageCode} filename={usageFilename} language="tsx" />
+          <CodeBlock code={usageCode} filename={usageFilename} language="tsx">
+            <CodeBlockServer code={usageCode} language="tsx" />
+          </CodeBlock>
         </section>
 
         {/* API Reference */}

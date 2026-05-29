@@ -29,12 +29,12 @@ export function InstallTabs({ url }: InstallTabsProps) {
   return (
     <Tabs defaultValue="pnpm" className="w-full">
       <div className="mb-3 flex items-center gap-1.5">
-        <TabsList className="h-8 gap-0 rounded-md border bg-muted/20 p-0.5">
+        <TabsList variant="line" className="h-8 gap-0">
           {PACKAGE_MANAGERS.map((manager) => (
             <TabsTrigger
               key={manager}
               value={manager}
-              className="rounded border-0 px-2.5 py-1 font-mono text-xs font-medium transition-all data-active:bg-background data-active:text-foreground data-active:shadow-xs"
+              className="rounded-none px-2.5 py-1 font-mono text-xs font-medium"
             >
               {manager}
             </TabsTrigger>
@@ -43,8 +43,12 @@ export function InstallTabs({ url }: InstallTabsProps) {
       </div>
 
       {PACKAGE_MANAGERS.map((manager) => (
-        <TabsContent key={manager} value={manager} className="mt-0 focus-visible:outline-hidden">
-          <CodeBlock code={getCommand(manager, url)} />
+        <TabsContent
+          key={manager}
+          value={manager}
+          className="mt-0 focus-visible:outline-hidden"
+        >
+          <CodeBlock code={getCommand(manager, url)} language="bash" />
         </TabsContent>
       ))}
     </Tabs>

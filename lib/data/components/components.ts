@@ -11,13 +11,7 @@ export const components = [
 
     component: BlurShimmerText,
 
-    installation: {
-      npm: "npx shadcn@latest add http://localhost:3000/r/blur-shimmer-text.json",
-
-      pnpm: "pnpm dlx shadcn@latest add http://localhost:3000/r/blur-shimmer-text.json",
-
-      yarn: "yarn dlx shadcn@latest add http://localhost:3000/r/blur-shimmer-text.json",
-    },
+    installation: "http://localhost:3000/r/blur-shimmer-text.json",
 
     usage: `
 import { BlurShimmerText } from "@/components/blur-shimmer-text"
