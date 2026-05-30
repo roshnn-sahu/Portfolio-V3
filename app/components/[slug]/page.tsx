@@ -148,7 +148,7 @@ export default async function ComponentSlugPage({ params }: Props) {
         {/* 3. USAGE */}
         <section id="usage" className="space-y-4 pt-6">
           <div className="space-y-1">
-            <h2 className="border-b pb-2 text-xl  tracking-tight">
+            <h2 className="text-xl  tracking-tight">
               Usage
             </h2>
             <p className="text-sm text-muted-foreground">
@@ -167,7 +167,7 @@ export default async function ComponentSlugPage({ params }: Props) {
         {/* 4. API REFERENCE / PROPS TABLE */}
         <section id="api-reference" className="space-y-4 pt-6">
           <div className="space-y-1">
-            <h2 className="border-b pb-2  text-xl  tracking-tight">
+            <h2 className="text-xl  tracking-tight">
               API Reference
             </h2>
             <p className="text-sm text-muted-foreground">

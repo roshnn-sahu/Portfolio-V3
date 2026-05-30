@@ -81,7 +81,7 @@
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
+  --muted: lab(15.204% 0 -0.00000596046);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
@@ -329,7 +329,7 @@ code[data-line-numbers] [data-line]::before {
   text-align: right;
 
   /* Typography matching shadcn exactly */
-  color: var(--color-zinc-600); /* zinc-600 */
+  color: var(--color-zinc-500); /* zinc-600 */
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.8rem;
   user-select: none; /* Keeps numbers unselectable during copies */

@@ -47,7 +47,7 @@ export function ComponentPreview({
 
       {/* 2. The Code Snippet Container (Bottom Half) */}
       {/* "border-t-0" prevents a thick double border at the seam where the two boxes touch */}
-      <div className="w-full rounded-b-xl bg-zinc-950">
+      <div className="w-full rounded-b-xl ">
         <div className="w-full [&_pre]:my-0 [&_pre]:max-h-[450px] [&_pre]:overflow-auto [&_pre]:bg-transparent [&_pre]:p-4">
           <CodeBlock
             code={code}

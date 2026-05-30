@@ -35,13 +35,13 @@ export function InstallTabs({ url }: InstallTabsProps) {
     <Tabs
       defaultValue="pnpm"
       onValueChange={setActiveTab}
-      className="w-full gap-0 overflow-hidden rounded-lg border border-zinc-800 bg-[#09090b]"
+      className="w-full gap-0 overflow-hidden rounded-lg border border-zinc-800"
     >
       {/* Unified Terminal Header Row */}
       <div className="flex items-center justify-between border-b border-zinc-800 bg-muted/50 px-4 py-2">
         <div className="flex items-center gap-3">
           {/* Terminal Promp Icon */}
-          <Terminal className="h-3.5 w-3.5 text-zinc-500" />
+          <Terminal className="size-5 border text-zinc-500" />
 
           {/* Package Manager Minimal Pills Layout */}
           <TabsList className="h-auto gap-1 bg-transparent p-0">
@@ -50,8 +50,8 @@ export function InstallTabs({ url }: InstallTabsProps) {
                 key={manager}
                 value={manager}
                 className={cn(
-                  "rounded-md px-2 py-0.5 font-mono text-xs font-medium text-zinc-400 transition-all",
-                  "bg-trans shadow-none data-[state=active]:bg-zinc-900 data-[state=active]:text-zinc-100"
+                  "rounded-md font-geist-sans text-xs font-medium text-zinc-400 transition-all",
+                  "shadow-none data-[state=active]:bg-black data-[state=active]:text-zinc-100"
                 )}
               >
                 {manager}

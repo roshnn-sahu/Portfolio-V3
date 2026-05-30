@@ -21,16 +21,16 @@ export function PropsTable({ props }: { props: Prop[] }) {
             ))}
           </tr>
         </thead>
-        <tbody className="divide-y">
+        <tbody className="divide-y font-geist-sans">
           {props.map((prop) => (
             <tr key={prop.name}>
               <td className="px-4 py-2.5">
-                <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs font-medium">
+                <code className="rounded bg-muted px-1.5 py-0.5 font-geist-sans text-xs  ">
                   {prop.name}
                 </code>
               </td>
               <td className="px-4 py-2.5">
-                <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs text-muted-foreground">
+                <code className="rounded bg-muted px-1.5 py-0.5 font-geist-sans text-xs text-muted-foreground">
                   {prop.type}
                 </code>
               </td>

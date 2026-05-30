@@ -34,7 +34,8 @@ export async function CodeBlockServer({
             {
               code(node: any) {
                 node.properties["data-line-numbers"] = "";
-                node.properties["style"] = "display: grid";
+                node.properties["style"] =
+                  "display: grid; font-family: var(--font-geist-mono);";
               },
               line(node: any) {
                 node.properties["data-line"] = "";
@@ -47,7 +48,7 @@ export async function CodeBlockServer({
 
   return (
     <div
-      className="font-giest-sans overflow-x-auto  bg-muted/50 p-4 text-sm [&>pre]:m-0 [&>pre]:bg-transparent [&>pre]:p-0 [&>pre]:outline-none"
+      className="font-giest-sans overflow-x-auto bg-muted/50 p-4 text-sm [&>pre]:m-0 [&>pre]:bg-transparent [&>pre]:p-0 [&>pre]:outline-none"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );
