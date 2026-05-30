@@ -9,7 +9,7 @@ interface CodeBlockServerProps {
 export async function CodeBlockServer({
   code,
   language = "tsx",
-  showLineNumbers = false,
+  showLineNumbers = true,
 }: CodeBlockServerProps) {
   const html = await codeToHtml(code, {
     lang: language,
@@ -19,7 +19,10 @@ export async function CodeBlockServer({
         pre(node) {
           if (typeof node.properties?.style === "string") {
             node.properties.style = node.properties.style
-              .replace(/background-color:[^;]+;?/g, "background-color: transparent")
+              .replace(
+                /background-color:[^;]+;?/g,
+                "background-color: transparent"
+              )
               .trim();
           } else {
             node.properties!.style = "background-color: transparent";
@@ -44,7 +47,7 @@ export async function CodeBlockServer({
 
   return (
     <div
-      className="overflow-x-auto rounded-lg p-4 font-mono text-sm [&>pre]:m-0 [&>pre]:bg-transparent [&>pre]:p-0 [&>pre]:outline-none"
+      className="font-giest-sans overflow-x-auto  bg-muted/50 p-4 text-sm [&>pre]:m-0 [&>pre]:bg-transparent [&>pre]:p-0 [&>pre]:outline-none"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );

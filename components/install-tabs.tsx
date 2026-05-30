@@ -1,8 +1,11 @@
 "use client";
 
 import * as React from "react";
+import { Terminal } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { CodeBlock } from "@/components/code-block";
+import { CopyButton } from "@/components/copy-button";
+import { cn } from "@/lib/utils";
 
 interface InstallTabsProps {
   url: string;
@@ -26,29 +29,53 @@ function getCommand(manager: string, url: string): string {
 }
 
 export function InstallTabs({ url }: InstallTabsProps) {
+  const [activeTab, setActiveTab] = React.useState<string>("pnpm");
+
   return (
-    <Tabs defaultValue="pnpm" className="w-full">
-      <div className="mb-3 flex items-center gap-1.5">
-        <TabsList variant="line" className="h-8 gap-0">
-          {PACKAGE_MANAGERS.map((manager) => (
-            <TabsTrigger
-              key={manager}
-              value={manager}
-              className="rounded-none px-2.5 py-1 font-mono text-xs font-medium"
-            >
-              {manager}
-            </TabsTrigger>
-          ))}
-        </TabsList>
+    <Tabs
+      defaultValue="pnpm"
+      onValueChange={setActiveTab}
+      className="w-full gap-0 overflow-hidden rounded-lg border border-zinc-800 bg-[#09090b]"
+    >
+      {/* Unified Terminal Header Row */}
+      <div className="flex items-center justify-between border-b border-zinc-800 bg-muted/50 px-4 py-2">
+        <div className="flex items-center gap-3">
+          {/* Terminal Promp Icon */}
+          <Terminal className="h-3.5 w-3.5 text-zinc-500" />
+
+          {/* Package Manager Minimal Pills Layout */}
+          <TabsList className="h-auto gap-1 bg-transparent p-0">
+            {PACKAGE_MANAGERS.map((manager) => (
+              <TabsTrigger
+                key={manager}
+                value={manager}
+                className={cn(
+                  "rounded-md px-2 py-0.5 font-mono text-xs font-medium text-zinc-400 transition-all",
+                  "bg-trans shadow-none data-[state=active]:bg-zinc-900 data-[state=active]:text-zinc-100"
+                )}
+              >
+                {manager}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </div>
+
+        <CopyButton value={getCommand(activeTab, url)} title="Copy command" />
       </div>
 
+      {/* Terminal Code Body */}
       {PACKAGE_MANAGERS.map((manager) => (
         <TabsContent
           key={manager}
           value={manager}
           className="mt-0 focus-visible:outline-hidden"
         >
-          <CodeBlock code={getCommand(manager, url)} language="bash" />
+          {/* '[&_button]:hidden' targeting safely hides the inner duplicate floating copy icon */}
+          <CodeBlock
+            code={getCommand(manager, url)}
+            language="bash"
+            className="w-full border-0 p-0 [&_button]:hidden"
+          />
         </TabsContent>
       ))}
     </Tabs>

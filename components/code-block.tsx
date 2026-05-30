@@ -1,8 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { Terminal, Copy, Check, FileCode } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { CopyButton } from "@/components/copy-button";
 
 interface CodeBlockProps {
   code: string;
@@ -19,25 +19,15 @@ export function CodeBlock({
   className,
   children,
 }: CodeBlockProps) {
-  const [hasCopied, setHasCopied] = React.useState(false);
-
-  const handleCopy = React.useCallback(async () => {
-    await navigator.clipboard.writeText(code);
-    setHasCopied(true);
-    setTimeout(() => setHasCopied(false), 2000);
-  }, [code]);
-
-  const isBash = language === "bash";
-
   return (
     <div
       className={cn(
-        "group overflow-hidden rounded-lg border border-zinc-800 shadow-xs",
+        "group overflow-hidden border border-zinc-800 shadow-xs  ",
         className
       )}
     >
       {/* Top bar with filename or language indicator */}
-      <div className="relative flex items-center justify-between border-b border-zinc-800 bg-muted/50 px-4 py-2">
+      {/* <div className="relative flex items-center justify-between border-b border-zinc-800 bg-muted/50 px-4 py-2">
         <div className="flex items-center gap-2">
           {isBash ? (
             <Terminal className="size-3.5 text-zinc-500" />
@@ -50,33 +40,20 @@ export function CodeBlock({
             {filename ?? (isBash ? "terminal" : language)}
           </span>
         </div>
-        {/* Copy button */}
-        <button
-          onClick={handleCopy}
-          className={cn(
-            "flex size-6 items-center justify-center",
-            "rounded-md border border-zinc-800 bg-zinc-900/80 text-zinc-400",
-            "backdrop-blur-xs transition-all",
-            "hover:border-zinc-700 hover:bg-zinc-800 hover:text-white",
-            "focus:opacity-100"
-          )}
-          title="Copy code"
-        >
-          {hasCopied ? (
-            <Check className="size-3.5 text-emerald-400" />
-          ) : (
-            <Copy className="size-3.5" />
-          )}
-        </button>
-      </div>
+      </div> */}
 
       {/* Code area with copy button */}
-      <div className="relative bg-muted/50">
+      <div className="relative ">
+        <CopyButton
+          value={code}
+          title="Copy code"
+          className="absolute top-4 right-4 bg-zinc-900/80 text-zinc-400 hover:bg-zinc-800 hover:text-white focus:opacity-100 backdrop-blur-xs"
+        />
         {/* Pre-highlighted code from server (children), or raw fallback */}
         {children ?? (
-          <div className="yyo overflow-x-auto p-4 pt-3">
-            <pre className="m-0 p-0">
-              <code className="block font-mono text-[0.8125rem] leading-relaxed text-zinc-100">
+          <div className=" overflow-x-auto p-4 pt-3 bg-muted/50">
+            <pre className="m-0 p-0 font-giest-sans">
+              <code className="font-giest-sans block text-[0.8125rem] leading-relaxed text-zinc-100">
                 {code}
               </code>
             </pre>

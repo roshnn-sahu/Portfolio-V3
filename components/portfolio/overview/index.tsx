@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import CopyButton from "@/components/copy-button";
+import { CopyButton } from "@/components/copy-button";
 import { motion } from "motion/react";
 
 export default function Overview() {

@@ -304,3 +304,40 @@
 .shiki .github-dark {
   background-color: unset !important;
 }
+
+/* 1. Target the code container created by your Shiki transformer */
+code[data-line-numbers] {
+  counter-reset: line;
+  display: grid !important;
+}
+
+/* 2. Style each distinct code line block */
+code[data-line-numbers] [data-line] {
+  border-left: 3px solid transparent;
+  line-height: 1.5rem;
+}
+
+/* 3. Generate the line numbers using an inline-block system (No Overlapping!) */
+code[data-line-numbers] [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
+  /* Layout: This pushes the code text to the right naturally */
+  display: inline-block;
+  width: 1.5rem;
+  margin-right: 1.25rem;
+  text-align: right;
+
+  /* Typography matching shadcn exactly */
+  color: var(--color-zinc-600); /* zinc-600 */
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.8rem;
+  user-select: none; /* Keeps numbers unselectable during copies */
+
+  /* Heavy Resets: This wipes out those unwanted dark background boxes and borders */
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}

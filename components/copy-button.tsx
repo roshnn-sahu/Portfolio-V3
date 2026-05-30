@@ -1,23 +1,14 @@
 "use client";
 
 import * as React from "react";
-import { Button } from "./ui/button";
+import { Copy, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { copyText } from "@/lib/copy";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { Copy01Icon, Tick02Icon } from "@hugeicons/core-free-icons";
 
-export default function CopyButton({
-  value,
-  className,
-  variant = "ghost",
-  size = "icon-xs",
-  event,
-  ...props
-}: React.ComponentProps<typeof Button> & {
+interface CopyButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   value: string;
-  event?: string;
-}) {
+}
+
+export function CopyButton({ value, className, ...props }: CopyButtonProps) {
   const [hasCopied, setHasCopied] = React.useState(false);
 
   React.useEffect(() => {
@@ -28,28 +19,24 @@ export default function CopyButton({
   }, [hasCopied]);
 
   return (
-    <Button
-      data-slot="copy-button"
-      data-copied={hasCopied}
-      variant={variant}
-      size={size}
-      className={cn(
-        "mb-0.5 inline-flex cursor-pointer p-0! align-middle hover:bg-transparent!",
-        className
-      )}
+    <button
       onClick={() => {
-        copyText(value);
+        navigator.clipboard.writeText(value);
         setHasCopied(true);
       }}
+      className={cn(
+        "flex size-6 items-center justify-center rounded-md border border-zinc-800 bg-transparent text-zinc-500",
+        "transition-colors hover:border-zinc-700 hover:bg-zinc-900 hover:text-zinc-200",
+        className
+      )}
+      title="Copy"
       {...props}
     >
-      <span className="sr-only">Copy</span>
-      <HugeiconsIcon
-        icon={hasCopied ? Tick02Icon : Copy01Icon}
-        strokeWidth={2}
-        className="size-3.5"
-      />
-    </Button>
+      {hasCopied ? (
+        <Check className="h-3.5 w-3.5 text-emerald-400" />
+      ) : (
+        <Copy className="h-3.5 w-3.5" />
+      )}
+    </button>
   );
 }
-

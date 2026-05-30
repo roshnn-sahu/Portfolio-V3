@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import type { NpmCommands } from "@/types/unist";
 
 import { CodeBlockCommand } from "./code-block-command";
-import CopyButton from "./copy-button";
+import { CopyButton } from "./copy-button";
 import { getIconForLanguageExtension } from "./icons";
 
 export const mdxCodeBlockComponents = {
@@ -82,7 +82,6 @@ export const mdxCodeBlockComponents = {
                   __withMeta__ && "translate-y-[-3.35rem]"
                 )}
                 value={__rawString__}
-                event="copy_code_block"
               />
             </div>
             {/* {!__withMeta__ && (
