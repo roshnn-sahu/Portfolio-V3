@@ -84,7 +84,7 @@ export default async function ComponentSlugPage({ params }: Props) {
             {previous && (
               <Link
                 href={`/components/${previous.slug}`}
-                className="flex size-9 items-center justify-center rounded-xl border border-border/80 bg-background/50 backdrop-blur-xs transition hover:bg-muted"
+                className="flex size-6 items-center justify-center rounded-md border border-zinc-800 bg-muted backdrop-blur-xs transition hover:bg-muted/70"
                 title={`Previous: ${previous.title}`}
               >
                 <HugeiconsIcon
@@ -98,12 +98,12 @@ export default async function ComponentSlugPage({ params }: Props) {
             {next && (
               <Link
                 href={`/components/${next.slug}`}
-                className="flex size-9 items-center justify-center rounded-xl border border-border/80 bg-background/50 backdrop-blur-xs transition hover:bg-muted"
+                className="flex size-6 items-center justify-center rounded-md border border-zinc-800 bg-muted backdrop-blur-xs transition hover:bg-muted/70"
                 title={`Next: ${next.title}`}
               >
                 <HugeiconsIcon
                   icon={ArrowRight02Icon}
-                  size={18}
+                  size={14}
                   strokeWidth={2}
                 />
               </Link>
@@ -148,9 +148,7 @@ export default async function ComponentSlugPage({ params }: Props) {
         {/* 3. USAGE */}
         <section id="usage" className="space-y-4 pt-6">
           <div className="space-y-1">
-            <h2 className="text-xl  tracking-tight">
-              Usage
-            </h2>
+            <h2 className="text-xl tracking-tight">Usage</h2>
             <p className="text-sm text-muted-foreground">
               Import the component in your project pages.
             </p>
@@ -159,6 +157,7 @@ export default async function ComponentSlugPage({ params }: Props) {
             code={component.usage}
             language="tsx"
             filename={`components/${slug}.tsx`}
+            className="rounded-lg"
           >
             <CodeBlockServer code={component.usage} language="tsx" />
           </CodeBlock>
@@ -167,9 +166,7 @@ export default async function ComponentSlugPage({ params }: Props) {
         {/* 4. API REFERENCE / PROPS TABLE */}
         <section id="api-reference" className="space-y-4 pt-6">
           <div className="space-y-1">
-            <h2 className="text-xl  tracking-tight">
-              API Reference
-            </h2>
+            <h2 className="text-xl tracking-tight">API Reference</h2>
             <p className="text-sm text-muted-foreground">
               Configure your component behavior using these props.
             </p>

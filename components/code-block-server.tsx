@@ -21,11 +21,12 @@ export async function CodeBlockServer({
             node.properties.style = node.properties.style
               .replace(
                 /background-color:[^;]+;?/g,
-                "background-color: transparent"
+                "background-color: transparent; scrollbar-width:none ;"
               )
               .trim();
           } else {
-            node.properties!.style = "background-color: transparent";
+            node.properties!.style =
+              "background-color: transparent; ";
           }
         },
       },
@@ -48,7 +49,7 @@ export async function CodeBlockServer({
 
   return (
     <div
-      className="font-giest-sans overflow-x-auto bg-muted/50 p-4 text-sm [&>pre]:m-0 [&>pre]:bg-transparent [&>pre]:p-0 [&>pre]:outline-none"
+      className="font-giest-sans no-scrollbar overflow-x-auto bg-muted/50 p-4 text-sm [&>pre]:m-0 [&>pre]:bg-transparent [&>pre]:p-0 [&>pre]:outline-none"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );

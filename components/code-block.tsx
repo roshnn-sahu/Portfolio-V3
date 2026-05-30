@@ -51,7 +51,7 @@ export function CodeBlock({
         />
         {/* Pre-highlighted code from server (children), or raw fallback */}
         {children ?? (
-          <div className="overflow-x-auto bg-muted/50 p-4 pt-3">
+          <div className="overflow-x-auto no-scrollbar bg-muted/50 p-4 pt-3">
             <pre className="m-0 p-0 ">
               <code className="block font-geist-mono text-[0.8125rem] tracking-wide text-zinc-400">
                 {code}
