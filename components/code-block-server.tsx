@@ -14,21 +14,30 @@ export async function CodeBlockServer({
   const html = await codeToHtml(code, {
     lang: language,
     theme: "github-dark",
-    transformers: showLineNumbers
-      ? [
-          {
-       pre(node) {
-       },
-            code(node) {
-              node.properties["data-line-numbers"] = "";
-              node.properties["style"] = "display: grid";
+    transformers: [
+      {
+        pre(node) {
+          if (typeof node.properties?.style === "string") {
+            node.properties.style = node.properties.style
+              .replace(/background-color:[^;]+;?/g, "")
+              .trim();
+          }
+        },
+      },
+      ...(showLineNumbers
+        ? [
+            {
+              code(node: any) {
+                node.properties["data-line-numbers"] = "";
+                node.properties["style"] = "display: grid";
+              },
+              line(node: any) {
+                node.properties["data-line"] = "";
+              },
             },
-            line(node) {
-              node.properties["data-line"] = "";
-            },
-          },
-        ]
-      : undefined,
+          ]
+        : []),
+    ],
   });
 
   return (

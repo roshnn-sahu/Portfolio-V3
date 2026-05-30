@@ -75,7 +75,7 @@ export function CodeBlock({
 
         {/* Pre-highlighted code from server (children), or raw fallback */}
         {children ?? (
-          <div className="overflow-x-auto p-4 pt-3">
+          <div className="overflow-x-auto p-4 pt-3  yyo">
             <pre
               className="m-0 p-0"
               
