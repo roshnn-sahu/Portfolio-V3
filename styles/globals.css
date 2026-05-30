@@ -317,3 +317,6 @@
     @slot;
   }
 }
+.shiki .github-dark{
+  background-color:unset !important;
+}

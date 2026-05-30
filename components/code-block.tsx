@@ -53,7 +53,7 @@ export function CodeBlock({
       </div>
 
       {/* Code area with copy button */}
-      <div className="relative bg-code">
+      <div className="relative bg-zinc-900">
         {/* Copy button */}
         <button
           onClick={handleCopy}
@@ -76,7 +76,10 @@ export function CodeBlock({
         {/* Pre-highlighted code from server (children), or raw fallback */}
         {children ?? (
           <div className="overflow-x-auto p-4 pt-3">
-            <pre className="m-0 p-0">
+            <pre
+              className="m-0 p-0"
+              
+            >
               <code className="block font-mono text-[0.8125rem] leading-relaxed text-zinc-100">
                 {code}
               </code>

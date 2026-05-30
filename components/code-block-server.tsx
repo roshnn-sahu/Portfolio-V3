@@ -17,9 +17,8 @@ export async function CodeBlockServer({
     transformers: showLineNumbers
       ? [
           {
-            pre(node) {
-              node.properties["style"] = "background-color:'transparent'";
-            },
+       pre(node) {
+       },
             code(node) {
               node.properties["data-line-numbers"] = "";
               node.properties["style"] = "display: grid";
