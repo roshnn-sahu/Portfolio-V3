@@ -19,8 +19,10 @@ export async function CodeBlockServer({
         pre(node) {
           if (typeof node.properties?.style === "string") {
             node.properties.style = node.properties.style
-              .replace(/background-color:[^;]+;?/g, "")
+              .replace(/background-color:[^;]+;?/g, "background-color: transparent")
               .trim();
+          } else {
+            node.properties!.style = "background-color: transparent";
           }
         },
       },

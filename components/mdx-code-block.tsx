@@ -60,19 +60,19 @@ export const mdxCodeBlockComponents = {
       );
     }
 
-     return (
-       <div className="group relative bg-zinc-900">
-         <pre
-           className={cn(
-             "max-h-[600px] overflow-x-auto p-4 pt-3 selection:bg-foreground selection:text-primary-foreground focus:outline-hidden focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2",
-             className
-           )}
-           tabIndex={0}
-           aria-label="Code snippet"
-           {...props}
-         >
-           {children}
-         </pre>
+    return (
+      <div className="group relative">
+        <pre
+          className={cn(
+            "max-h-[600px] overflow-x-auto p-4 pt-3 selection:bg-foreground selection:text-primary-foreground focus:outline-hidden focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2",
+            className
+          )}
+          tabIndex={0}
+          aria-label="Code snippet"
+          {...props}
+        >
+          {children}
+        </pre>
         {__rawString__ && (
           <>
             <div className="absolute top-3 right-3 z-20 flex items-center gap-2">

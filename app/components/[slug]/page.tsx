@@ -23,14 +23,10 @@ interface Props {
   }>;
 }
 
-export async function generateMetadata({
-  params,
-}: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = (await params).slug;
 
-  const component = components.find(
-    (item) => item.slug === slug
-  );
+  const component = components.find((item) => item.slug === slug);
 
   if (!component) {
     return notFound();
@@ -42,14 +38,10 @@ export async function generateMetadata({
   };
 }
 
-export default async function ComponentSlugPage({
-  params,
-}: Props) {
+export default async function ComponentSlugPage({ params }: Props) {
   const slug = (await params).slug;
 
-  const component = components.find(
-    (item) => item.slug === slug
-  );
+  const component = components.find((item) => item.slug === slug);
 
   if (!component) {
     notFound();
@@ -57,36 +49,26 @@ export default async function ComponentSlugPage({
 
   // Registry URL for install tabs
   const registryUrl =
-    typeof component.installation === "string"
-      ? component.installation
-      : "";
+    typeof component.installation === "string" ? component.installation : "";
 
   // Prev / Next index calculations
-  const currentIndex = components.findIndex(
-    (item) => item.slug === slug
-  );
+  const currentIndex = components.findIndex((item) => item.slug === slug);
 
-  const previous =
-    currentIndex > 0
-      ? components[currentIndex - 1]
-      : null;
+  const previous = currentIndex > 0 ? components[currentIndex - 1] : null;
 
   const next =
-    currentIndex < components.length - 1
-      ? components[currentIndex + 1]
-      : null;
+    currentIndex < components.length - 1 ? components[currentIndex + 1] : null;
 
   const PreviewComponent = component.component;
 
   return (
-    <main className="container py-10 max-w-4xl mx-auto">
+    <main className="container mx-auto max-w-4xl py-10">
       <div className="space-y-10">
-        
         {/* Top Navigation Bar */}
         <div className="flex items-center justify-between">
           <Link
             href="/components"
-            className="inline-flex items-center gap-2 font-geist-mono text-sm text-muted-foreground transition-colors hover:text-foreground group"
+            className="group inline-flex items-center gap-2 font-geist-mono text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <HugeiconsIcon
               icon={ArrowMoveUpLeftIcon}
@@ -131,15 +113,17 @@ export default async function ComponentSlugPage({
 
         {/* Component Title & Header Info */}
         <div className="space-y-3">
-          <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
+          <div className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
             <span>Components</span>
             <span>/</span>
-            <span className="text-foreground font-medium">{component.title}</span>
+            <span className="font-medium text-foreground">
+              {component.title}
+            </span>
           </div>
-          <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl">
+          <h1 className="font-geist-sans text-4xl font-bold tracking-tight text-foreground md:text-5xl">
             {component.title}
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
+          <p className="max-w-2xl font-geist-sans text-lg leading-relaxed text-muted-foreground">
             {component.description}
           </p>
         </div>
@@ -157,16 +141,14 @@ export default async function ComponentSlugPage({
 
         {/* 2. COMPONENT INSTALLATION */}
         <section id="installation" className="space-y-6 pt-6">
-          <h2 className="text-2xl font-bold tracking-tight">
-            Installation
-          </h2>
+          <h2 className="text-xl tracking-tight">Installation</h2>
           <InstallTabs url={registryUrl} />
         </section>
 
         {/* 3. USAGE */}
         <section id="usage" className="space-y-4 pt-6">
           <div className="space-y-1">
-            <h2 className="text-2xl font-bold tracking-tight border-b pb-2">
+            <h2 className="border-b pb-2 text-xl  tracking-tight">
               Usage
             </h2>
             <p className="text-sm text-muted-foreground">
@@ -185,7 +167,7 @@ export default async function ComponentSlugPage({
         {/* 4. API REFERENCE / PROPS TABLE */}
         <section id="api-reference" className="space-y-4 pt-6">
           <div className="space-y-1">
-            <h2 className="text-2xl font-bold tracking-tight border-b pb-2">
+            <h2 className="border-b pb-2  text-xl  tracking-tight">
               API Reference
             </h2>
             <p className="text-sm text-muted-foreground">
@@ -197,11 +179,10 @@ export default async function ComponentSlugPage({
 
         {/* 5. ADDITIONAL README / MDX DOCS (If present) */}
         {"readme" in component && typeof component.readme === "string" && (
-          <section className="border-t pt-10 mt-10">
+          <section className="mt-10 border-t pt-10">
             <MDX code={component.readme} />
           </section>
         )}
-
       </div>
     </main>
   );

@@ -52,7 +52,7 @@ export function ComponentPreview({ preview, code, filename, children }: Componen
           {/* Refresh button */}
           <button
             onClick={handleReset}
-            className="absolute top-3 right-3 z-10 flex size-7 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900/70 text-zinc-400 backdrop-blur-xs transition-all hover:border-zinc-700 hover:bg-zinc-800 hover:text-white"
+            className="absolute top-3 right-3 z-10 flex size-7 items-center justify-center rounded-md border border-zinc-800  text-zinc-400 backdrop-blur-xs transition-all hover:border-zinc-700 hover:bg-zinc-800 hover:text-white"
             title="Restart animation"
           >
             <RotateCw className="size-3.5 transition-transform active:rotate-180 duration-300" />

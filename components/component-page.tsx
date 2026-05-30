@@ -69,14 +69,14 @@ export function ComponentPage({
 
         {/* Installation */}
         <section id="installation" className="space-y-6 pt-6">
-          <h2 className="text-2xl font-bold tracking-tight">Installation</h2>
+          <h2 className="text-2xl tracking-tight">Installation</h2>
           <InstallTabs url={installUrl} />
         </section>
 
         {/* Usage */}
         <section id="usage" className="space-y-4 pt-6">
           <div className="space-y-1">
-            <h2 className="text-2xl font-bold tracking-tight">Usage</h2>
+            <h2 className="text-2xl  tracking-tight">Usage</h2>
             <p className="text-sm text-muted-foreground">
               Import the component in your project.
             </p>
@@ -89,7 +89,7 @@ export function ComponentPage({
         {/* API Reference */}
         <section id="api-reference" className="space-y-4 pt-6">
           <div className="space-y-1">
-            <h2 className="text-2xl font-bold tracking-tight">
+            <h2 className="text-2xl tracking-tight">
               API Reference
             </h2>
             <p className="text-sm text-muted-foreground">

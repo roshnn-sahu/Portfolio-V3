@@ -37,7 +37,7 @@ export function CodeBlock({
       )}
     >
       {/* Top bar with filename or language indicator */}
-      <div className="flex items-center justify-between border-b border-zinc-800 bg-zinc-900 px-4 py-2">
+      <div className="relative flex items-center justify-between border-b border-zinc-800 bg-muted/50 px-4 py-2">
         <div className="flex items-center gap-2">
           {isBash ? (
             <Terminal className="size-3.5 text-zinc-500" />
@@ -50,19 +50,15 @@ export function CodeBlock({
             {filename ?? (isBash ? "terminal" : language)}
           </span>
         </div>
-      </div>
-
-      {/* Code area with copy button */}
-      <div className="relative bg-zinc-900">
         {/* Copy button */}
         <button
           onClick={handleCopy}
           className={cn(
-            "absolute top-3 right-3 z-10 flex size-7 items-center justify-center",
+            "flex size-6 items-center justify-center",
             "rounded-md border border-zinc-800 bg-zinc-900/80 text-zinc-400",
-            "opacity-0 backdrop-blur-xs transition-all",
+            "backdrop-blur-xs transition-all",
             "hover:border-zinc-700 hover:bg-zinc-800 hover:text-white",
-            "group-hover:opacity-100 focus:opacity-100"
+            "focus:opacity-100"
           )}
           title="Copy code"
         >
@@ -72,14 +68,14 @@ export function CodeBlock({
             <Copy className="size-3.5" />
           )}
         </button>
+      </div>
 
+      {/* Code area with copy button */}
+      <div className="relative bg-muted/50">
         {/* Pre-highlighted code from server (children), or raw fallback */}
         {children ?? (
-          <div className="overflow-x-auto p-4 pt-3  yyo">
-            <pre
-              className="m-0 p-0"
-              
-            >
+          <div className="yyo overflow-x-auto p-4 pt-3">
+            <pre className="m-0 p-0">
               <code className="block font-mono text-[0.8125rem] leading-relaxed text-zinc-100">
                 {code}
               </code>
