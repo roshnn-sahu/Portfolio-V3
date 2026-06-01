@@ -14,6 +14,19 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "interactive-navbar",
+      "type": "registry:block",
+      "title": "Interactive Navbar",
+      "description": "A modern interactive navigation bar built with Motion and Tailwind CSS.",
+      "dependencies": ["motion", "lucide-react"],
+      "files": [
+        {
+          "path": "registry/default/interactive-navbar/interactive-navbar.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

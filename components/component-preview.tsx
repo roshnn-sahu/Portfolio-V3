@@ -28,7 +28,7 @@ export function ComponentPreview({
       {/* 1. The Live Preview Box (Top Half) */}
       <div className="relative flex min-h-[250px] w-full items-center justify-center overflow-hidden rounded-t-xl border border-zinc-800 bg-[#09090b] p-10">
         {/* Subtle background grid pattern to match the clean documentation depth */}
-        <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:16px_16px] opacity-40" />
+        <div className="absolute inset-0 -z-10 h-full w-full bg-size-[16px_16px] bg-[radial-gradient(#27272a_1px,transparent_1px)] opacity-40" />
 
         {/* Minimal Refresh/Restart button floating in the top-right corner */}
         <button
