@@ -23,11 +23,13 @@ export default function Overview() {
           </Link>{" "}
           &ndash; a RAG-based AI document chatbot enabling contextual
           conversations with PDFs and documents using semantic search and vector
-          embeddings. <br /><br />
-          Over the past years, I’ve worked on production-grade products
-          across AI SaaS, e-commerce, finance, and sports industries, focusing
-          on scalable architecture, performance, and modern user experiences.{" "}
-          <br /><br />
+          embeddings. <br />
+          <br />
+          Over the past years, I’ve worked on production-grade products across
+          AI SaaS, e-commerce, finance, and sports industries, focusing on
+          scalable architecture, performance, and modern user experiences.{" "}
+          <br />
+          <br />
           Find more of my work on{" "}
           <Link
             href="https://x.com/hloRoshan"
@@ -48,17 +50,19 @@ export default function Overview() {
           >
             GitHub
           </Link>
-          , or reach out via{" "}
-          <Link
-            href="mailto:hello.roshan004@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-foreground underline-offset-4 hover:underline"
-            aria-label="Mail to hello.roshan004@gmail.com"
-          >
-            email
-          </Link>
-          <CopyButton value="hello.roshan004@gmail.com" className="ml-0.5" />
+          , or reach out via {" "}
+          <span >
+            <Link
+              href="mailto:hello.roshan004@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground underline-offset-4 hover:underline"
+              aria-label="Mail to hello.roshan004@gmail.com"
+            >
+              email
+            </Link>
+            <CopyButton value="hello.roshan004@gmail.com" className="ml-0.5" />
+          </span>
         </p>
       </motion.div>
     </section>

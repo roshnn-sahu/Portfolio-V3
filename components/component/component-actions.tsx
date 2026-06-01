@@ -43,7 +43,7 @@ export function PageActions({ prevSlug, nextSlug, prevTitle, nextTitle }: PageAc
     <div className="flex items-center gap-2 select-none">
       {/* Copy Page Dropdown Selector */}
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
+        <DropdownMenuTrigger>
           <button
             className={cn(
               "inline-flex h-8 items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900/40 px-3 text-xs font-medium text-zinc-300 transition-colors",
