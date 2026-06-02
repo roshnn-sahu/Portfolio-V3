@@ -4,13 +4,15 @@
   "homepage": "https://roshn-sahu.vercel.app",
   "items": [
     {
-      "name": "blur-shimmer-text",
+      "name": "interactive-navbar",
       "type": "registry:block",
-      "title": "Blur Shimmer Text",
-      "description": "A text component that loops phrases with a horizontal blur shimmer.",
+      "title": "Interactive Navbar",
+      "description": "A modern interactive navigation bar with hover spring animations and mobile support.",
+      "dependencies": ["motion", "lucide-react"],
+      "registryDependencies": ["button"],
       "files": [
         {
-          "path": "registry/default/blur-shimmer-text/blur-shimmer-text.tsx",
+          "path": "registry/default/interactive-navbar/interactive-navbar.tsx",
           "type": "registry:component"
         }
       ]

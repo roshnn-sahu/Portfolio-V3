@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
-import { ComponentPreview } from "@/components/component-preview";
-import { CodeBlock } from "@/components/code-block";
+import { ComponentPreview } from "@/components/component/component-preview";
+import { CodeBlock } from "@/components/component/code-block";
 import { CodeBlockServer } from "@/components/code-block-server";
 import { InstallTabs } from "@/components/install-tabs";
 import { PropsTable } from "@/components/props-table";
@@ -36,7 +36,7 @@ export function ComponentPage({
   props,
 }: ComponentPageProps) {
   return (
-    <main className="container py-10 max-w-4xl mx-auto">
+    <main className="container mx-auto max-w-4xl py-10">
       <div className="space-y-10">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-1.5 text-sm text-muted-foreground">
@@ -76,7 +76,7 @@ export function ComponentPage({
         {/* Usage */}
         <section id="usage" className="space-y-4 pt-6">
           <div className="space-y-1">
-            <h2 className="text-2xl  tracking-tight">Usage</h2>
+            <h2 className="text-2xl tracking-tight">Usage</h2>
             <p className="text-sm text-muted-foreground">
               Import the component in your project.
             </p>
@@ -89,9 +89,7 @@ export function ComponentPage({
         {/* API Reference */}
         <section id="api-reference" className="space-y-4 pt-6">
           <div className="space-y-1">
-            <h2 className="text-2xl tracking-tight">
-              API Reference
-            </h2>
+            <h2 className="text-2xl tracking-tight">API Reference</h2>
             <p className="text-sm text-muted-foreground">
               Configure the component behavior using these props.
             </p>

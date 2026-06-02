@@ -10,9 +10,9 @@ import {
 
 import { components } from "@/lib/data/components/components";
 
-import { CodeBlock } from "@/components/code-block";
+import { CodeBlock } from "@/components/component/code-block";
 import { CodeBlockServer } from "@/components/code-block-server";
-import { ComponentPreview } from "@/components/component-preview";
+import { ComponentPreview } from "@/components/component/component-preview";
 import { InstallTabs } from "@/components/install-tabs";
 import { PropsTable } from "@/components/props-table";
 import { MDX } from "@/components/mdx";
@@ -49,7 +49,9 @@ export default async function ComponentSlugPage({ params }: Props) {
 
   // Registry URL for install tabs
   const registryUrl =
-    typeof component.installation === "string" ? component.installation : "";
+    typeof component.installation === "string"
+      ? component.installation
+      : component.installation.registry;
 
   // Prev / Next index calculations
   const currentIndex = components.findIndex((item) => item.slug === slug);
@@ -171,7 +173,7 @@ export default async function ComponentSlugPage({ params }: Props) {
               Configure your component behavior using these props.
             </p>
           </div>
-          <PropsTable props={component.props} />
+          <PropsTable props={component.props ?? []} />
         </section>
 
         {/* 5. ADDITIONAL README / MDX DOCS (If present) */}

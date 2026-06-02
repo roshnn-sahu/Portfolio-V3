@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "interactive-navbar",
+  "title": "Interactive Navbar",
+  "description": "A modern interactive navigation bar with hover spring animations and mobile support.",
+  "type": "registry:block",
+  "dependencies": ["motion", "lucide-react"],
+  "registryDependencies": ["button"],
+  "files": [
+    {
+      "path": "registry/default/interactive-navbar/interactive-navbar.tsx",
+      "type": "registry:component"
+    }
+  ]
+}
