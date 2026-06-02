@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Terminal } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { CodeBlock } from "@/components/code-block";
+import { CodeBlock } from "@/components/component/code-block";
 import { CopyButton } from "@/components/copy-button";
 import { cn } from "@/lib/utils";
 
@@ -44,17 +44,17 @@ export function InstallTabs({ url }: InstallTabsProps) {
           <Terminal className="size-5 border text-zinc-500" />
 
           {/* Package Manager Minimal Pills Layout */}
-           <TabsList variant="line" className="h-auto gap-1 bg-transparent p-0">
+          <TabsList variant="line" className="h-auto gap-1 bg-transparent p-0">
             {PACKAGE_MANAGERS.map((manager) => (
-               <TabsTrigger
-                 key={manager}
-                 value={manager}
-                 className={cn(
-                   "rounded-md font-geist-sans text-xs font-medium text-zinc-400 transition-all",
-                   "shadow-none",
-                   "group-data-[variant=line]/tabs-list:data-active:bg-zinc-900 group-data-[variant=line]/tabs-list:data-active:text-zinc-100"
-                 )}
-               >
+              <TabsTrigger
+                key={manager}
+                value={manager}
+                className={cn(
+                  "rounded-md font-geist-sans text-xs font-medium text-zinc-400 transition-all",
+                  "shadow-none",
+                  "group-data-[variant=line]/tabs-list:data-active:bg-zinc-900 group-data-[variant=line]/tabs-list:data-active:text-zinc-100"
+                )}
+              >
                 {manager}
               </TabsTrigger>
             ))}
@@ -75,7 +75,7 @@ export function InstallTabs({ url }: InstallTabsProps) {
           <CodeBlock
             code={getCommand(manager, url)}
             language="bash"
-            className="w-full border-0 p-0 [&_button]:hidden scrollbar-none"
+            className="scrollbar-none w-full border-0 p-0 [&_button]:hidden"
           />
         </TabsContent>
       ))}

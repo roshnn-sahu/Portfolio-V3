@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
 import type { NpmCommands } from "@/types/unist";
 
-import { CodeBlockCommand } from "./code-block-command";
-import { CopyButton } from "./copy-button";
-import { getIconForLanguageExtension } from "./icons";
+import { CodeBlockCommand } from "@/components/component/code-block-command";
+import { CopyButton } from "@/components/copy-button";
+import { getIconForLanguageExtension } from "@/components/icons";
 
 export const mdxCodeBlockComponents = {
   figure({ className, ...props }: React.ComponentProps<"figure">) {

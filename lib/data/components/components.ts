@@ -1,52 +1,34 @@
-import { BlurShimmerText } from "@/registry/default/blur-shimmer-text/blur-shimmer-text";
-import { InteractiveNavbar } from "@/registry/default/interactive-navbar/interactive-navbar";
+import InteractiveNavbarDemo from "@/registry/default/interactive-navbar/demo";
 
-export const components = [
-  {
-    slug: "blur-shimmer-text",
-    title: "Blur Shimmer Text",
-    description:
-      "A text component that loops phrases with a horizontal blur shimmer.",
-    component: BlurShimmerText,
-    installation: "http://localhost:3000/r/blur-shimmer-text.json",
-    usage: `import { BlurShimmerText } from "@/components/blur-shimmer-text"
+import { RegistryComponent } from "@/types/component";
 
-export default function Demo() {
-  return (
-    <BlurShimmerText
-      texts={["Open to Work"]}
-    />
-  )
-}`,
-    props: [
-      {
-        name: "texts",
-        type: "string[]",
-        default: "-",
-        description: "Phrases for the blur shimmer text.",
-      },
-      {
-        name: "className",
-        type: "string",
-        default: "-",
-        description: "Custom class names.",
-      },
-    ],
-  },
-
+export const components: RegistryComponent[] = [
   {
     slug: "interactive-navbar",
     title: "Interactive Navbar",
     description:
       "A modern interactive navigation bar with hover spring animations and mobile support.",
-    component: InteractiveNavbar,
-    installation: "http://localhost:3000/r/interactive-navbar.json",
-    usage: `import { InteractiveNavbar } from "@/components/interactive-navbar"
+    category: "Navigation",
+    component: InteractiveNavbarDemo,
+    installation: {
+      cli: "npx shadcn@latest add http://localhost:3000/r/interactive-navbar.json",
+      registry: "http://localhost:3000/r/interactive-navbar.json",
+    },
+    dependencies: ["motion", "lucide-react"],
+    features: [
+      "Spring hover animations",
+      "Responsive mobile menu",
+      "Animated active states",
+      "Smooth transitions",
+      "Mobile friendly",
+    ],
+    usage: `import Navbar from "@/components/interactive-navbar"
 
 export default function Page() {
   return (
-    <InteractiveNavbar
+    <Navbar
       logo="Acme"
+      logoHref="/"
       links={[
         { title: "Home", href: "/" },
         { title: "About", href: "/about" },
@@ -56,40 +38,49 @@ export default function Page() {
     >
       <button>Sign Up</button>
       <button>Login</button>
-    </InteractiveNavbar>
+    </Navbar>
   )
 }`,
     props: [
       {
         name: "links",
         type: "NavLink[]",
-        default: "[]",
-        description: "Array of nav links with title and href.",
+        default: "[{ title: 'Home', href: '/' }, ...]",
+        description:
+          "Array of navigation link objects with `title` (string) and `href` (string) properties.",
       },
       {
         name: "logo",
         type: "ReactNode",
-        default: '"Logo"',
-        description: "Logo element displayed on the left of the navbar.",
+        default: '"Interactive"',
+        description:
+          "Custom logo element (text or JSX) displayed on the left side of the navbar.",
       },
       {
         name: "logoHref",
         type: "string",
         default: '"/"',
-        description: "Href for the logo link.",
+        description:
+          "The href for the logo link. Clicking the logo navigates to this path.",
       },
       {
         name: "className",
         type: "string",
-        default: "-",
-        description: "Additional class names for the navbar container.",
+        default: "—",
+        description:
+          "Additional Tailwind CSS class names applied to the inner `<nav>` element for custom styling.",
       },
       {
         name: "children",
         type: "ReactNode",
-        default: "-",
-        description: "Action buttons or elements rendered on the right side.",
+        default: "Default Sign Up / Login buttons",
+        description:
+          "Custom action buttons or elements rendered on the right side of the navbar. If omitted, default Sign Up and Login buttons are shown.",
       },
     ],
   },
 ];
+
+export function getComponentBySlug(slug: string) {
+  return components.find((component) => component.slug === slug);
+}
