@@ -1,24 +1,32 @@
 "use client";
 
-import { useState, useCallback, useMemo } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 interface NavLink {
   title: string;
   href: string;
 }
-
-interface InteractiveNavbarProps {
+interface NavbarProps {
   links?: NavLink[];
   logo?: React.ReactNode;
   logoHref?: string;
   className?: string;
   children?: React.ReactNode;
 }
+
+const DEFAULT_LINKS: NavLink[] = [
+  { title: "Home", href: "/" },
+  { title: "About", href: "/about" },
+  { title: "Services", href: "/services" },
+  { title: "Portfolio", href: "/portfolio" },
+  { title: "Contact", href: "/contact" },
+];
 
 const HOVER_SPRING = {
   type: "spring" as const,
@@ -27,25 +35,46 @@ const HOVER_SPRING = {
   mass: 0.6,
 };
 
-function NavItem({
-  link,
-  idx,
-  isHovered,
-  isActive,
-  onMouseEnter,
-  onMouseLeave,
+const NavLogo = React.memo(function NavLogo({
+  logo,
+  logoHref,
 }: {
+  logo: React.ReactNode;
+  logoHref: string;
+}) {
+  return (
+    <Link
+      href={logoHref}
+      className="text-2xl font-bold tracking-tight select-none"
+    >
+      {logo}
+    </Link>
+  );
+});
+
+NavLogo.displayName = "NavLogo";
+
+interface NavItemProps {
   link: NavLink;
   idx: number;
   isHovered: boolean;
   isActive: boolean;
   onMouseEnter: (idx: number) => void;
   onMouseLeave: () => void;
-}) {
+}
+
+const NavItem = React.memo(function NavItem({
+  link,
+  idx,
+  isHovered,
+  isActive,
+  onMouseEnter,
+  onMouseLeave,
+}: NavItemProps) {
   return (
     <Link
       href={link.href}
-      className="relative px-4 py-1 text-center rounded-full"
+      className={`relative inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 ${isActive ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
       onMouseEnter={() => onMouseEnter(idx)}
       onMouseLeave={onMouseLeave}
       aria-current={isActive ? "page" : undefined}
@@ -53,7 +82,7 @@ function NavItem({
       {isActive && (
         <motion.div
           layoutId="active"
-          className="absolute inset-0 rounded-full bg-primary"
+          className="absolute inset-0 rounded-full bg-foreground"
           transition={HOVER_SPRING}
         />
       )}
@@ -62,7 +91,7 @@ function NavItem({
         {isHovered && (
           <motion.div
             layoutId="hover"
-            className="absolute inset-0 h-full w-full rounded-full bg-primary"
+            className="absolute inset-0 h-full w-full rounded-full bg-black dark:bg-white"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -71,26 +100,30 @@ function NavItem({
         )}
       </AnimatePresence>
 
-      <span className="relative z-10 font-normal mix-blend-difference text-primary-foreground">
+      <span
+        className={`relative z-10 flex items-center gap-2 ${isHovered ? "text-white dark:text-black" : ""}`}
+      >
         {link.title}
       </span>
     </Link>
   );
-}
+});
 
-function MobileMenu({
-  isOpen,
-  onClose,
-  links,
-  activeIdx,
-  children,
-}: {
+NavItem.displayName = "NavItem";
+
+interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
-  links: NavLink[];
+  navLinks: NavLink[];
   activeIdx: number;
-  children?: React.ReactNode;
-}) {
+}
+
+const MobileMenu = React.memo(function MobileMenu({
+  isOpen,
+  onClose,
+  navLinks,
+  activeIdx,
+}: MobileMenuProps) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -99,44 +132,81 @@ function MobileMenu({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2 }}
-          className="md:hidden mt-2 rounded-lg border border-border bg-background"
+          className="mx-auto mt-3 w-full max-w-7xl overflow-hidden rounded-b-xl border border-border/50 bg-background/95 backdrop-blur-xl md:hidden"
         >
           <div className="flex flex-col">
-            {links.map((link, idx) => (
+            {navLinks.map((link, idx) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={onClose}
-                className={cn(
-                  "px-4 py-2 text-sm font-medium transition-colors",
+                className={`px-4 py-2 text-sm font-medium ${
                   activeIdx === idx
-                    ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-                )}
+                    ? "bg-black text-white"
+                    : "text-neutral-800 hover:bg-neutral-100"
+                }`}
               >
                 {link.title}
               </Link>
             ))}
           </div>
-
-          {children && (
-            <div className="flex flex-col gap-2 p-4 border-t border-border">
-              {children}
-            </div>
-          )}
+          <div className="grid grid-cols-1 gap-2 border-t border-neutral-200 p-4 sm:grid-cols-2 sm:flex-row">
+            <Button
+              variant="outline"
+              type="button"
+              className="w-full rounded-full px-3"
+            >
+              Sign Up
+            </Button>
+            <Button
+              variant="default"
+              type="button"
+              className="w-full rounded-full px-3"
+            >
+              Login
+            </Button>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
   );
-}
+});
 
-export function InteractiveNavbar({
-  links = [],
-  logo,
+MobileMenu.displayName = "MobileMenu";
+
+const MenuToggle = ({
+  setIsMobileMenuOpen,
+  isMobileMenuOpen,
+}: {
+  setIsMobileMenuOpen: (isOpen: boolean) => void;
+  isMobileMenuOpen: boolean;
+}) => {
+  return (
+    <div className="flex items-center md:hidden">
+      <button
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        className="rounded-lg border border-neutral-400/50 p-2 hover:bg-neutral-50"
+        aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+      >
+        <Menu size={16} />
+      </button>
+    </div>
+  );
+};
+
+MenuToggle.displayName = "MobileToggle";
+
+const Navbar = ({
+  links = DEFAULT_LINKS,
+
+  logo = "Interactive",
+
   logoHref = "/",
+
   className,
+
   children,
-}: InteractiveNavbarProps) {
+}: NavbarProps) => {
   const [hoveredLink, setHoveredLink] = useState<number | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -150,68 +220,84 @@ export function InteractiveNavbar({
   }, []);
 
   const activeIdx = useMemo(
-    () => links.findIndex((link) => link.href === pathname),
-    [links, pathname]
+    () =>
+      links.findIndex(
+        (link) =>
+          link.href === pathname || (link.href === "/" && pathname === "/")
+      ),
+    [pathname]
   );
 
   return (
-    <header className={cn("w-full", className)} role="banner">
+    <header className="w-full" role="banner">
       <nav
-        className="mx-auto max-w-7xl px-5 py-4"
+        className={cn(
+          "mx-auto w-full max-w-7xl border-border/50 px-4 py-3 backdrop-blur-xl transition-all duration-300",
+          className
+        )}
         role="navigation"
         aria-label="Main navigation"
       >
         <div className="flex items-center justify-between">
-          <Link href={logoHref} className="text-2xl font-bold tracking-tight select-none">
-            {logo ?? "Logo"}
-          </Link>
+          <NavLogo logo={logo} logoHref={logoHref} />
+          {/* Nav Links Pill */}
+          <div
+            className="hidden items-center gap-1 rounded-full border border-border bg-background p-1 shadow-sm md:flex dark:bg-muted/40"
+            role="menubar"
+          >
+            {links.map((link, idx) => (
+              <NavItem
+                key={link.href + idx}
+                link={link}
+                idx={idx}
+                isHovered={hoveredLink === idx}
+                isActive={activeIdx === idx}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              />
+            ))}
+          </div>
+          {/* Auth Buttons */}
 
-          {/* Desktop Nav Links */}
-          {links.length > 0 && (
-            <div
-              className="hidden items-center gap-1 rounded-full border-2 border-border bg-background p-1 text-sm md:flex"
-              role="menubar"
-            >
-              {links.map((link, idx) => (
-                <NavItem
-                  key={link.href}
-                  link={link}
-                  idx={idx}
-                  isHovered={hoveredLink === idx}
-                  isActive={activeIdx === idx}
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                />
-              ))}
-            </div>
-          )}
+          <div className="hidden gap-2 md:flex">
+            {children ?? (
+              <>
+                <Button
+                  variant="outline"
+                  type="button"
+                  className="rounded-full px-3 hover:text-white"
+                >
+                  Sign Up
+                </Button>
 
-          {/* Right Side: Custom Actions or default slot */}
-          <div className="hidden items-center gap-2 md:flex">
-            {children}
+                <Button
+                  variant="default"
+                  type="button"
+                  className="rounded-full px-3"
+                >
+                  Login
+                </Button>
+              </>
+            )}
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <div className="flex items-center md:hidden">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="rounded-lg border border-border p-2 transition-colors hover:bg-accent"
-              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-            >
-              <Menu size={16} />
-            </button>
-          </div>
+          {/* Mobile View: Hamburger Menu */}
+          <MenuToggle
+            isMobileMenuOpen={isMobileMenuOpen}
+            setIsMobileMenuOpen={setIsMobileMenuOpen}
+          />
         </div>
 
         {/* Mobile Menu */}
         <MobileMenu
           isOpen={isMobileMenuOpen}
           onClose={() => setIsMobileMenuOpen(false)}
-          links={links}
+          navLinks={links}
           activeIdx={activeIdx}
-          children={children}
         />
       </nav>
     </header>
   );
-}
+};
+
+export default Navbar;
