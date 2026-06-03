@@ -132,7 +132,9 @@ const MobileMenu = React.memo(function MobileMenu({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2 }}
-          className="mx-auto mt-3 w-full max-w-7xl overflow-hidden rounded-b-xl border border-border/50 bg-background/95 backdrop-blur-xl md:hidden"
+          className={cn("font-geist-sans mx-auto mt-3 w-full max-w-7xl overflow-hidden rounded-b-xl border border-border/50 bg-background/95 backdrop-blur-xl md:hidden",
+            "dark:bg-muted/50 "
+          )}
         >
           <div className="flex flex-col">
             {navLinks.map((link, idx) => (
@@ -140,10 +142,10 @@ const MobileMenu = React.memo(function MobileMenu({
                 key={link.href}
                 href={link.href}
                 onClick={onClose}
-                className={`px-4 py-2 text-sm font-medium ${
+                className={`px-4 py-2 text-sm font-medium   ${
                   activeIdx === idx
-                    ? "bg-black text-white"
-                    : "text-neutral-800 hover:bg-neutral-100"
+                    ? "bg-black text-white dark:bg-white dark:text-black"
+                    : "text-neutral-800 hover:bg-neutral-100 dark:text-white dark:hover:text-black"
                 }`}
               >
                 {link.title}
@@ -154,14 +156,14 @@ const MobileMenu = React.memo(function MobileMenu({
             <Button
               variant="outline"
               type="button"
-              className="w-full rounded-full px-3"
+              className="w-full rounded-full px-3 dark:bg-black"
             >
               Sign Up
             </Button>
             <Button
               variant="default"
               type="button"
-              className="w-full rounded-full px-3"
+              className="w-full rounded-full px-3 dark:bg-white"
             >
               Login
             </Button>
@@ -183,13 +185,14 @@ const MenuToggle = ({
 }) => {
   return (
     <div className="flex items-center md:hidden">
-      <button
+      <Button
+      variant="outline"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="rounded-lg border border-neutral-400/50 p-2 hover:bg-neutral-50"
+        className="rounded-lg border dark:border-neutral-400/50 p-2 hover:bg-neutral-50"
         aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
       >
         <Menu size={16} />
-      </button>
+      </Button>
     </div>
   );
 };

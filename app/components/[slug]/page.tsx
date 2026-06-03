@@ -61,7 +61,7 @@ export default async function ComponentSlugPage({ params }: Props) {
   const next =
     currentIndex < components.length - 1 ? components[currentIndex + 1] : null;
 const PreviewComponent  = component.component;
-const previewUrl = "previewUrl" in component ? component.previewUrl : null;
+
 
   return (
     <main className="container mx-auto max-w-4xl py-10">
@@ -134,7 +134,7 @@ const previewUrl = "previewUrl" in component ? component.previewUrl : null;
         <section className="space-y-4">
           <ComponentPreview
             preview={<PreviewComponent />}
-            previewUrl={previewUrl}
+ 
             code={component.usage}
             filename={`components/${slug}.tsx`}
           >

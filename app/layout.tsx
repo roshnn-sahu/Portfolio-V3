@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { GeistPixelSquare } from "geist/font/pixel";
 import "@/styles/globals.css";
 import SiteFooter from "@/components/site-footer";
+import LayoutContainer from "@/components/layout-container";
 import SiteHeader from "@/components/site-header";
 import ThemeProvider from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
@@ -34,11 +35,11 @@ export default function RootLayout({
         <ThemeProvider>
           <Toaster position="top-center" />
           <TooltipProvider>
-            <div className="container mx-auto md:max-w-161  border border-x border-border">
+            <LayoutContainer>
               <SiteHeader />
               <main className="overflow-hidden px-5">{children}</main>
               <SiteFooter />
-            </div>
+            </LayoutContainer>
           </TooltipProvider>
         </ThemeProvider>
       </body>
