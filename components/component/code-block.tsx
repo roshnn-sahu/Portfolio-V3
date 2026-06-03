@@ -22,7 +22,7 @@ export function CodeBlock({
   return (
     <div
       className={cn(
-        "group overflow-hidden border dark:border-zinc-800 shadow-xs",
+        "group overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-xs bg-background",
         className
       )}
     >
@@ -47,14 +47,13 @@ export function CodeBlock({
         <CopyButton
           value={code}
           title="Copy code"
-          className={cn("absolute top-4 right-4 z-10 flex h-7 w-7 items-center justify-center rounded-md bg-background border text-zinc-500 transition-colors",
-            "dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-500 dark:hover:bg-zinc-900 dark:hover:text-zinc-200")}
+          
         />
         {/* Pre-highlighted code from server (children), or raw fallback */}
         {children ?? (
-          <div className="overflow-x-auto no-scrollbar bg-muted/50 p-4 pt-3">
-            <pre className="m-0 p-0 ">
-              <code className="block font-geist-mono text-[0.8125rem] tracking-wide text-zinc-400">
+          <div className="overflow-x-auto no-scrollbar bg-zinc-50 dark:bg-muted/50 p-4 pt-3">
+            <pre className="m-0 p-0">
+              <code className="block font-geist-mono text-[0.8125rem] tracking-wide text-zinc-600 dark:text-zinc-400">
                 {code}
               </code>
             </pre>

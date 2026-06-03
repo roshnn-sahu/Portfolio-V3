@@ -198,13 +198,9 @@ MenuToggle.displayName = "MobileToggle";
 
 const Navbar = ({
   links = DEFAULT_LINKS,
-
   logo = "Interactive",
-
   logoHref = "/",
-
   className,
-
   children,
 }: NavbarProps) => {
   const [hoveredLink, setHoveredLink] = useState<number | null>(null);
@@ -242,7 +238,7 @@ const Navbar = ({
           <NavLogo logo={logo} logoHref={logoHref} />
           {/* Nav Links Pill */}
           <div
-            className="hidden items-center gap-1 rounded-full border border-border bg-background p-1 shadow-sm md:flex dark:bg-muted/40"
+            className="hidden items-center gap-1 rounded-full border border-zinc-200 bg-white p-1 shadow-sm md:flex dark:border-zinc-700 dark:bg-zinc-800"
             role="menubar"
           >
             {links.map((link, idx) => (
@@ -265,7 +261,7 @@ const Navbar = ({
                 <Button
                   variant="outline"
                   type="button"
-                  className="rounded-full px-3 hover:text-white"
+                  className="rounded-full px-3"
                 >
                   Sign Up
                 </Button>

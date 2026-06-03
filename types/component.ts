@@ -10,15 +10,11 @@ export interface ComponentProp {
 
 export interface RegistryComponent {
   slug: string;
-
   title: string;
-
   description: string;
-
   category?: string;
-
   component: ComponentType<any>;
-
+  previewUrl?: string    
   installation: {
     cli: string;
     registry: string;

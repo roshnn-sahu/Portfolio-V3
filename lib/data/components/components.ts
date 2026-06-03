@@ -5,6 +5,7 @@ import { RegistryComponent } from "@/types/component";
 export const components: RegistryComponent[] = [
   {
     slug: "interactive-navbar",
+     previewUrl: "/preview/interactive-navbar",
     title: "Interactive Navbar",
     description:
       "A modern interactive navigation bar with hover spring animations and mobile support.",

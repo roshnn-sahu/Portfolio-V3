@@ -49,7 +49,7 @@ export default function ThemeToggle({ className }: { className?: string }) {
           <Button
             variant="ghost"
             size="icon-sm"
-            className={cn(className, "cursor-pointer hover:text-white")}
+            className={cn(className, "cursor-pointer ")}
           />
         }
       >

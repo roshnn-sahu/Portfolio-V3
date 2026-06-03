@@ -81,7 +81,7 @@
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
-  --muted: lab(15.204% 0 -0.00000596046);
+  --muted: oklch(0.965 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
@@ -203,10 +203,6 @@
       @apply flex min-h-6 items-center border-l-4 border-l-transparent px-4 py-0.5;
     }
 
-    [data-line] span {
-      @apply text-(--shiki-light) dark:text-(--shiki-dark);
-    }
-
     [data-highlighted-line] {
       @apply border-l-blue-500/70 bg-code-highlight;
     }
@@ -303,6 +299,11 @@
 }
 .shiki .github-dark {
   background-color: unset !important;
+}
+
+/* Standalone Shiki theme variable support for CodeBlockServer and other non-pretty-code blocks */
+[data-line] span {
+  @apply text-(--shiki-light) dark:text-(--shiki-dark);
 }
 
 /* 1. Target the code container created by your Shiki transformer */
