@@ -13,7 +13,11 @@ export async function CodeBlockServer({
 }: CodeBlockServerProps) {
   const html = await codeToHtml(code, {
     lang: language,
-    theme: "github-dark",
+    themes: {
+      dark: "github-dark",
+      light: "github-light",
+    },
+    defaultColor: false,
     transformers: [
       {
         pre(node) {
@@ -49,7 +53,7 @@ export async function CodeBlockServer({
 
   return (
     <div
-      className="font-giest-sans no-scrollbar overflow-x-auto bg-muted/50 p-4 text-sm [&>pre]:m-0 [&>pre]:bg-transparent [&>pre]:p-0 [&>pre]:outline-none"
+      className="font-giest-sans no-scrollbar overflow-x-auto bg-zinc-50 dark:bg-muted/50 p-4 text-sm [&>pre]:m-0 [&>pre]:bg-transparent [&>pre]:p-0 [&>pre]:outline-none"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );

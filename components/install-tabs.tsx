@@ -35,24 +35,26 @@ export function InstallTabs({ url }: InstallTabsProps) {
     <Tabs
       defaultValue="pnpm"
       onValueChange={setActiveTab}
-      className="w-full gap-0 overflow-hidden rounded-lg border border-zinc-800"
+      className={cn("w-full gap-0 overflow-hidden rounded-lg border ",
+        "dark;border-zinc-800"
+      )}
     >
       {/* Unified Terminal Header Row */}
-      <div className="flex items-center justify-between border-b border-zinc-800 bg-muted/50 px-4 py-2">
+      <div className={cn("relative flex items-center justify-between border-b bg-muted/50 px-4 py-2",
+        "dark:border-zinc-800 "
+      )}>
         <div className="flex items-center gap-3">
           {/* Terminal Promp Icon */}
           <Terminal className="size-5 border text-zinc-500" />
 
           {/* Package Manager Minimal Pills Layout */}
-          <TabsList variant="line" className="h-auto gap-1 bg-transparent p-0">
+          <TabsList className="h-auto gap-1 bg-transparent p-0">
             {PACKAGE_MANAGERS.map((manager) => (
               <TabsTrigger
                 key={manager}
                 value={manager}
-                className={cn(
-                  "rounded-md font-geist-sans text-xs font-medium text-zinc-400 transition-all",
-                  "shadow-none",
-                  "group-data-[variant=line]/tabs-list:data-active:bg-zinc-900 group-data-[variant=line]/tabs-list:data-active:text-zinc-100"
+                className={cn("rounded-md font-geist-sans text-xs font-medium transition-all shadow-none ",
+                  ""
                 )}
               >
                 {manager}

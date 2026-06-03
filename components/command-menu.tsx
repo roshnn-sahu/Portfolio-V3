@@ -25,6 +25,8 @@ import {
   Search01Icon,
   Sun01Icon,
   TextAlignLeft01Icon,
+  ReactIcon,
+  ReactFreeIcons,
 } from "@hugeicons/core-free-icons";
 import {
   Command,
@@ -55,6 +57,11 @@ const MENU_LINKS: CommandLinkItem[] = [
     title: "Home",
     href: "/",
     icon: Home03Icon,
+  },
+  {
+    title: "Components",
+    href: "/components",
+    icon: ReactFreeIcons,
   },
   {
     title: "Blog",
@@ -426,4 +433,3 @@ function postToCommandLinkItem(post: Post): CommandLinkItem {
     icon: isComponent ? ComputerIcon : TextAlignLeft01Icon,
   };
 }
-

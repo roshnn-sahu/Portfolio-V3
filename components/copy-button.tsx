@@ -25,15 +25,20 @@ export function CopyButton({ value, className, ...props }: CopyButtonProps) {
         setHasCopied(true);
       }}
       className={cn(
-        "flex size-6 items-center justify-center rounded-md border border-zinc-800 bg-transparent text-zinc-500",
-        "transition-colors hover:border-zinc-700 hover:bg-zinc-900 hover:text-zinc-200",
+        "absolute top-4 right-4",
+        "flex size-7 items-center justify-center rounded-md border",
+        "border-zinc-200 bg-background text-zinc-500",
+        "dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-500",
+        "transition-colors cursor-pointer",
+        "hover:border-zinc-300 hover:bg-zinc-50 hover:text-zinc-600",
+        "dark:hover:border-zinc-700 dark:hover:bg-zinc-900 dark:hover:text-zinc-200",
         className
       )}
       title="Copy"
       {...props}
     >
       {hasCopied ? (
-        <Check className="h-3.5 w-3.5 text-emerald-400" />
+        <Check className="h-3.5 w-3.5 text-emerald-500" />
       ) : (
         <Copy className="h-3.5 w-3.5" />
       )}
