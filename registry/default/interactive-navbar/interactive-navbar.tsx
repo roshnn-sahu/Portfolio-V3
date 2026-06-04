@@ -101,7 +101,7 @@ const NavItem = React.memo(function NavItem({
       </AnimatePresence>
 
       <span
-        className={`relative z-10 flex items-center gap-2 ${isHovered ? "text-white dark:text-black" : ""}`}
+        className={`relative z-10 flex items-center gap-2 ${isHovered ? "text-white dark:text-black dark:duration-300" : ""}`}
       >
         {link.title}
       </span>
