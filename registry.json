@@ -16,6 +16,20 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "expandable-card",
+      "type": "registry:block",
+      "title": "Expandable Card",
+      "description": "A modern expandable card component with layout animations and image previews.",
+      "dependencies": ["motion"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/expandable.card/expandable-card.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

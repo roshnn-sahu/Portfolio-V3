@@ -1,4 +1,5 @@
 import InteractiveNavbarDemo from "@/registry/default/interactive-navbar/demo";
+import ExpandableCardDemo from "@/registry/default/expandable.card/demo";
 
 import { RegistryComponent } from "@/types/component";
 
@@ -79,6 +80,33 @@ export default function Page() {
           "Custom action buttons or elements rendered on the right side of the navbar. If omitted, default Sign Up and Login buttons are shown.",
       },
     ],
+  },
+  {
+    slug: "expandable-card",
+    previewUrl: "/preview/expandable-card",
+    title: "Expandable Card",
+    description:
+      "A modern expandable card component with layout animations and image previews.",
+    category: "Cards",
+    component: ExpandableCardDemo,
+    installation: {
+      cli: "npx shadcn@latest add http://localhost:3000/r/expandable-card.json",
+      registry: "http://localhost:3000/r/expandable-card.json",
+    },
+    dependencies: ["motion"],
+    features: [
+      "Expandable card with animated transitions",
+      "Image preview with layout animations",
+      "Keyboard escape to close",
+      "Click outside to close",
+      "Smooth spring animations",
+    ],
+    usage: `import ExpandableCard from "@/components/ui/expandable-card"
+
+export default function Example() {
+  return <ExpandableCard />
+}`,
+    props: [],
   },
 ];
 

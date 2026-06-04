@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "expandable-card",
+  "title": "Expandable Card",
+  "description": "A modern expandable card component with layout animations and image previews.",
+  "type": "registry:block",
+  "dependencies": ["motion"],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/expandable.card/expandable-card.tsx",
+      "type": "registry:component"
+    }
+  ]
+}

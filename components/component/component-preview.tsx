@@ -26,10 +26,10 @@ export function ComponentPreview({
   };
 
   return (
-    <div className="my-6 flex w-full flex-col">
+    <div className="my-6 flex w-full flex-col relative">
       <div
         className={cn(
-          "relative flex min-h-[250px] w-full items-center justify-center overflow-hidden rounded-t-xl border p-10",
+          "relative flex min-h-[250px] max-h-[500px] w-full items-center justify-center overflow-hidden rounded-t-xl border p-10",
           "border-zinc-200 bg-background",
           "dark:border-zinc-800 dark:bg-[#09090b]"
         )}
@@ -49,7 +49,7 @@ export function ComponentPreview({
         </button>
 
         {/* The live rendering of your animated component */}
-        <div key={key} className="flex w-full items-center justify-center">
+        <div key={key} className="flex w-full items-center justify-center relative">
           {preview}
         </div>
       </div>
