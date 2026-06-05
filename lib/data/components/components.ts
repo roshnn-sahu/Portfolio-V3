@@ -2,19 +2,19 @@ import InteractiveNavbarDemo from "@/registry/default/interactive-navbar/demo";
 import ExpandableCardDemo from "@/registry/default/expandable.card/demo";
 
 import { RegistryComponent } from "@/types/component";
-
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 export const components: RegistryComponent[] = [
   {
     slug: "interactive-navbar",
-     previewUrl: "/preview/interactive-navbar",
+    previewUrl: "/preview/interactive-navbar",
     title: "Interactive Navbar",
     description:
       "A modern interactive navigation bar with hover spring animations and mobile support.",
     category: "Navigation",
     component: InteractiveNavbarDemo,
     installation: {
-      cli: "npx shadcn@latest add http://localhost:3000/r/interactive-navbar.json",
-      registry: "http://localhost:3000/r/interactive-navbar.json",
+      cli: `"npx shadcn@latest add ${baseUrl}/r/interactive-navbar.json"`,
+      registry: `${baseUrl}/r/interactive-navbar.json`,
     },
     dependencies: ["motion", "lucide-react"],
     features: [
@@ -90,8 +90,8 @@ export default function Page() {
     category: "Cards",
     component: ExpandableCardDemo,
     installation: {
-      cli: "npx shadcn@latest add http://localhost:3000/r/expandable-card.json",
-      registry: "http://localhost:3000/r/expandable-card.json",
+      cli: `npx shadcn@latest add ${baseUrl}/r/expandable-card.json`,
+      registry: `${baseUrl}/r/expandable-card.json`,
     },
     dependencies: ["motion"],
     features: [
@@ -106,7 +106,21 @@ export default function Page() {
 export default function Example() {
   return <ExpandableCard />
 }`,
-    props: [],
+
+    props: [
+      {
+        name: "cards",
+        type: "ExpandableCardItem[]",
+        default: "DEFAULT_CARDS",
+        description: "Array of expandable card items.",
+      },
+      {
+        name: "className",
+        type: "string",
+        default: "-",
+        description: "Additional container styles.",
+      },
+    ],
   },
 ];
 
