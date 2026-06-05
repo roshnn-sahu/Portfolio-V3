@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 
- interface ExpandableCardItem {
+interface ExpandableCardItem {
   description: string;
   title: string;
   src: string;
@@ -185,14 +185,14 @@ const ExpandableCard = ({
         {openCard && (
           <div
             onClick={() => setOpenCard(null)}
-            className="fixed inset-0 z-10 h-full w-full bg-black/30"
+            className="fixed inset-0 z-50 h-full w-full bg-black/30"
           />
         )}
         {openCard && (
           <motion.div
             ref={ref}
             layoutId={`card-${openCard.title}`}
-            className="fixed top-24 z-20 mx-auto flex h-full w-full max-w-[400px] flex-col overflow-y-auto bg-white sm:rounded-3xl md:h-fit dark:bg-neutral-900"
+            className="fixed top-24 z-60 bg-clip-border mx-auto flex h-full w-full max-w-[400px] flex-col overflow-y-auto bg-white sm:rounded-3xl md:h-fit dark:bg-neutral-900"
           >
             <div className="flex flex-col">
               <motion.img
@@ -220,7 +220,7 @@ const ExpandableCard = ({
                 </div>
                 <motion.span
                   layoutId={`card-cta-${openCard.title}`}
-                  className="rounded-full bg-green-500 px-3 py-1 text-xs transition-colors duration-150"
+                  className="cursor-pointer rounded-full bg-green-500 px-3 py-1 text-xs text-white transition-colors duration-150"
                 >
                   Play
                 </motion.span>
@@ -242,7 +242,7 @@ const ExpandableCard = ({
             <motion.button
               layoutId={`card-${card.title}`}
               key={card.title}
-              className="flex w-full items-center  justify-between rounded-2xl border bg-card p-3 text-left transition-colors hover:bg-accent duration-150"
+              className="flex w-full items-center justify-between rounded-2xl border bg-card/50 p-3 text-left backdrop-blur-2xl transition-colors duration-150 hover:bg-accent"
               onClick={() => setOpenCard(card)}
             >
               <div className="flex items-center gap-3">
@@ -269,7 +269,7 @@ const ExpandableCard = ({
               </div>
               <motion.span
                 layoutId={`card-cta-${card.title}`}
-                className="rounded-full bg-white px-3 py-1 text-xs text-black transition-colors duration-150 hover:bg-green-500 hover:text-white"
+                className="cursor-pointer rounded-full border bg-white px-3 py-1 text-xs text-black transition-colors duration-150 hover:bg-green-500 hover:text-white"
               >
                 Play
               </motion.span>
@@ -283,8 +283,4 @@ const ExpandableCard = ({
 
 export default ExpandableCard;
 
-export type {
-  ExpandableCardProps,
-  ExpandableCardItem,
-};
-
+export type { ExpandableCardProps, ExpandableCardItem };
