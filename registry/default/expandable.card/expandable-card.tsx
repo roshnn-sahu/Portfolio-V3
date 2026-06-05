@@ -242,7 +242,7 @@ const ExpandableCard = ({
             <motion.button
               layoutId={`card-${card.title}`}
               key={card.title}
-              className="flex w-full items-center justify-between rounded-2xl border bg-card p-3 text-left transition-colors hover:bg-accent"
+              className="flex w-full items-center  justify-between rounded-2xl border bg-card p-3 text-left transition-colors hover:bg-accent duration-150"
               onClick={() => setOpenCard(card)}
             >
               <div className="flex items-center gap-3">

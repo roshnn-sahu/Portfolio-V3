@@ -17,6 +17,7 @@ export const PROJECTS: Project[] = [
       "Optimized low-latency AI response workflows",
     ],
 
+    github: "https://github.com/roshnn-sahu/Documate-AI",
     link: "https://your-documate-live-link.com",
 
     skills: [
@@ -49,6 +50,7 @@ export const PROJECTS: Project[] = [
       "Supports customizable templates tailored for different niches and platforms.",
       "Integrated tools for testing and refining thumbnail performance.",
     ],
+    github: "https://github.com/roshnn-sahu/ai-thumbnail-generator",
     link: "https://www.boltcreator.online/",
     skills: [
       "Next.js",
@@ -76,6 +78,7 @@ export const PROJECTS: Project[] = [
       "Responsive storefront and creator dashboard",
       "Scalable backend APIs using Express.js and MongoDB",
     ],
+    github: "https://github.com/roshnn-sahu/BeatWave",
     link: "https://beat-wave-pink.vercel.app/",
     skills: ["Next.js", "React", "TailwindCSS", "Cashfree", "Motion", "Vite"],
     isExpanded: false,

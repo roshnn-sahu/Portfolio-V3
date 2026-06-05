@@ -11,7 +11,11 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { LinkCircle02Icon } from "@hugeicons/core-free-icons";
+import {
+  Github01Icon,
+  GithubIcon,
+  LinkCircle02Icon,
+} from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import type { Project } from "@/types/projects";
 import { cn } from "@/lib/utils";
@@ -36,7 +40,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               {project.logo && (
                 <div className="shrink-0 select-none">
                   <img
-                    src={project.logo||""}
+                    src={project.logo || ""}
                     alt={`${project.title} logo`}
                     className="h-6 w-6 rounded-full border"
                     itemProp="image"
@@ -51,6 +55,33 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                   {project.title}
                 </h3>
               </div>
+            </div>
+            <div className="shrink-0">
+              <Tooltip>
+                <TooltipTrigger
+                  render={
+                    <a
+                      className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground transition-colors after:absolute after:-inset-2 hover:text-foreground"
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      aria-label={`Open ${project.title} project link`}
+                      itemProp="url"
+                    >
+                      <HugeiconsIcon
+                        icon={GithubIcon}
+                        strokeWidth={2}
+                        className="size-4"
+                      />
+                      <span className="sr-only">Open Github Repo</span>
+                    </a>
+                  }
+                />
+                <TooltipContent className="font-geist-sans">
+                  <p>Open Github Repo</p>
+                </TooltipContent>
+              </Tooltip>
             </div>
             <div className="shrink-0">
               <Tooltip>
@@ -138,4 +169,3 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     </article>
   );
 }
-
