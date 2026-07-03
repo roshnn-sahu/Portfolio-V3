@@ -16,6 +16,7 @@ import { ComponentPreview } from "@/components/component/component-preview";
 import { InstallTabs } from "@/components/install-tabs";
 import { PropsTable } from "@/components/props-table";
 import { MDX } from "@/components/mdx";
+import { cn } from "@/lib/utils";
 
 interface Props {
   params: Promise<{
@@ -60,8 +61,7 @@ export default async function ComponentSlugPage({ params }: Props) {
 
   const next =
     currentIndex < components.length - 1 ? components[currentIndex + 1] : null;
-const PreviewComponent  = component.component;
-
+  const PreviewComponent = component.component;
 
   return (
     <main className="container mx-auto max-w-4xl py-10">
@@ -86,12 +86,14 @@ const PreviewComponent  = component.component;
             {previous && (
               <Link
                 href={`/components/${previous.slug}`}
-                className="flex size-6 items-center justify-center rounded-md border border-zinc-800 bg-muted backdrop-blur-xs transition hover:bg-muted/70"
+                className={cn(
+                  "flex size-6 items-center justify-center rounded-md border bg-muted text-muted-foreground backdrop-blur-xs transition hover:bg-muted/70"
+                )}
                 title={`Previous: ${previous.title}`}
               >
                 <HugeiconsIcon
                   icon={ArrowLeft02Icon}
-                  size={18}
+                  size={14}
                   strokeWidth={2}
                 />
               </Link>
@@ -100,7 +102,9 @@ const PreviewComponent  = component.component;
             {next && (
               <Link
                 href={`/components/${next.slug}`}
-                className="flex size-6 items-center justify-center rounded-md border border-zinc-800 bg-muted backdrop-blur-xs transition hover:bg-muted/70"
+                className={cn(
+                  "flex size-6 items-center justify-center rounded-md border bg-muted text-muted-foreground backdrop-blur-xs transition hover:bg-muted/70"
+                )}
                 title={`Next: ${next.title}`}
               >
                 <HugeiconsIcon
@@ -134,7 +138,6 @@ const PreviewComponent  = component.component;
         <section className="space-y-4">
           <ComponentPreview
             preview={<PreviewComponent />}
- 
             code={component.usage}
             filename={`components/${slug}.tsx`}
           >

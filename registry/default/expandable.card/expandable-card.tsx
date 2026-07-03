@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import {config} from "@/config/config";
+import { config } from "@/config/config";
 
 const baseUrl = config.baseUrl;
 
@@ -179,7 +179,7 @@ const ExpandableCard = ({
     <>
       <div
         className={cn(
-          "relative mx-auto min-h-screen w-full max-w-xl px-10 py-30",
+          "relative mx-auto w-full max-w-xl px-10 py-30",
           className
         )}
       >
@@ -193,7 +193,7 @@ const ExpandableCard = ({
           <motion.div
             ref={ref}
             layoutId={`card-${openCard.title}`}
-            className="fixed top-24 z-60 bg-clip-border mx-auto flex h-full w-full max-w-[400px] flex-col overflow-y-auto bg-white sm:rounded-3xl md:h-fit dark:bg-neutral-900"
+            className="fixed top-24 z-60 mx-auto flex h-full w-full max-w-[400px] flex-col overflow-y-auto bg-white bg-clip-border sm:rounded-3xl md:h-fit dark:bg-neutral-900"
           >
             <div className="flex flex-col">
               <motion.img
