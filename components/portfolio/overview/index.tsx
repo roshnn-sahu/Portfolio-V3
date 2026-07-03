@@ -8,62 +8,65 @@ export default function Overview() {
     <section className="font-geist-sans">
       <motion.div>
         <p className="text-muted-foreground">
-          I build scalable web applications, AI-powered SaaS products, and
-          modern digital experiences focused on performance, usability, and
-          clean architecture. <br /> <br />
-          Currently building{" "}
-          <Link
-            href="https://www.boltcreator.online/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-foreground underline underline-offset-4"
-            aria-label="Visit draftlogo"
-          >
-            DocumateAI
-          </Link>{" "}
-          &ndash; a RAG-based AI document chatbot enabling contextual
-          conversations with PDFs and documents using semantic search and vector
-          embeddings. <br />
-          <br />
-          Over the past years, I’ve worked on production-grade products across
-          AI SaaS, e-commerce, finance, and sports industries, focusing on
-          scalable architecture, performance, and modern user experiences.{" "}
-          <br />
-          <br />
-          Find more of my work on{" "}
-          <Link
-            href="https://x.com/hloRoshan"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-foreground underline-offset-4 hover:underline"
-            aria-label="Visit twitter"
-          >
-            @hloRoshan
-          </Link>
-          , explore my code on{" "}
-          <Link
-            href="https://github.com/roshnn-sahu"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-foreground underline-offset-4 hover:underline"
-            aria-label="Visit github"
-          >
-            GitHub
-          </Link>
-          , or reach out via {" "}
-          <span >
+          Full-stack engineer building scalable apps and clean product
+          experiences.
+        </p>
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+          <li>
+            Currently building{" "}
             <Link
-              href="mailto:hello.roshan004@gmail.com"
+              href="https://www.boltcreator.online/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground underline underline-offset-4"
+              aria-label="Visit draftlogo"
+            >
+              DocumateAI
+            </Link>
+            , a RAG-based AI chatbot for PDFs and documents.
+          </li>
+          <li>
+            Focused on modern architecture, performance, and product clarity.
+          </li>
+          <li>
+            Connect on{" "}
+            <Link
+              href="https://x.com/hloRoshan"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-foreground underline-offset-4 hover:underline"
-              aria-label="Mail to hello.roshan004@gmail.com"
+              aria-label="Visit twitter"
             >
-              email
+              @hloRoshan
             </Link>
-            <CopyButton value="hello.roshan004@gmail.com" className="ml-0.5" />
-          </span>
-        </p>
+            ,{" "}
+            <Link
+              href="https://github.com/roshnn-sahu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground underline-offset-4 hover:underline"
+              aria-label="Visit github"
+            >
+              GitHub 
+            </Link>
+             {" "}or email me at{" "}
+            <span>
+              <Link
+                href="mailto:hello.roshan004@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-foreground underline-offset-4 hover:underline"
+                aria-label="Mail to hello.roshan004@gmail.com"
+              >
+                Email
+              </Link>
+              <CopyButton
+                value="hello.roshan004@gmail.com"
+                className="ml-0.5"
+              />
+            </span>
+          </li>
+        </ul>
       </motion.div>
     </section>
   );

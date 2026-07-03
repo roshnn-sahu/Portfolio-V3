@@ -1,4 +1,3 @@
-
 import Connect from "@/components/portfolio/connect";
 import CTA from "@/components/portfolio/cta";
 import Experience from "@/components/portfolio/experience";
@@ -10,7 +9,7 @@ import TechStack from "@/components/portfolio/tech-stack";
 
 export default function Page() {
   return (
-    <div>
+    <div>      
       <ProfileHeader />
       <Overview />
       <Projects />
@@ -22,4 +21,3 @@ export default function Page() {
     </div>
   );
 }
-

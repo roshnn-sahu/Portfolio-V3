@@ -30,12 +30,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${GeistPixelSquare.variable} antialiased selection:bg-foreground selection:text-primary-foreground`}
+        className={`${geistSans.variable} ${geistMono.variable} ${GeistPixelSquare.variable} antialiased selection:bg-foreground selection:text-primary-foreground relative`}
       >
+
         <ThemeProvider>
           <Toaster position="top-center" />
           <TooltipProvider>
             <LayoutContainer>
+           
               <SiteHeader />
               <main className="overflow-hidden px-5">{children}</main>
               <SiteFooter />
