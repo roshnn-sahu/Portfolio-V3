@@ -1,5 +1,6 @@
 import InteractiveNavbarDemo from "@/registry/default/interactive-navbar/demo";
 import ExpandableCardDemo from "@/registry/default/expandable.card/demo";
+import MorphingPlayPauseButtonDemo from "@/registry/default/morphing-play-pause-button/demo";
 
 import { RegistryComponent } from "@/types/component";
 const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
@@ -12,6 +13,7 @@ export const components: RegistryComponent[] = [
       "A modern interactive navigation bar with hover spring animations and mobile support.",
     category: "Navigation",
     component: InteractiveNavbarDemo,
+    sourceFile: "registry/default/interactive-navbar/interactive-navbar.tsx",
     installation: {
       cli: `"npx shadcn@latest add ${baseUrl}/r/interactive-navbar.json"`,
       registry: `${baseUrl}/r/interactive-navbar.json`,
@@ -89,6 +91,7 @@ export default function Page() {
       "A modern expandable card component with layout animations and image previews.",
     category: "Cards",
     component: ExpandableCardDemo,
+    sourceFile: "registry/default/expandable.card/expandable-card.tsx",
     installation: {
       cli: `npx shadcn@latest add ${baseUrl}/r/expandable-card.json`,
       registry: `${baseUrl}/r/expandable-card.json`,
@@ -119,6 +122,41 @@ export default function Example() {
         type: "string",
         default: "-",
         description: "Additional container styles.",
+      },
+    ],
+  },
+  {
+    slug: "morphing-play-pause-button",
+    previewUrl: "/preview/morphing-play-pause-button",
+    title: "Morphing Play/Pause Button",
+    description:
+      "A morphing play/pause button with smooth SVG path animations using Motion spring transitions.",
+    category: "Buttons",
+    component: MorphingPlayPauseButtonDemo,
+    sourceFile: "registry/default/morphing-play-pause-button/play-pause-button.tsx",
+    installation: {
+      cli: `npx shadcn@latest add ${baseUrl}/r/morphing-play-pause-button.json`,
+      registry: `${baseUrl}/r/morphing-play-pause-button.json`,
+    },
+    dependencies: ["motion"],
+    features: [
+      "Morphing SVG path animation",
+      "Spring-based transitions",
+      "Light and dark theme support",
+      "Glossy hover highlight effect",
+      "Accessible ARIA labels",
+    ],
+    usage: `import PlayPauseButton from "@/components/ui/play-pause-button"
+
+export default function Example() {
+  return <PlayPauseButton />
+}`,
+    props: [
+      {
+        name: "theme",
+        type: '"light" | "dark"',
+        default: '"light"',
+        description: "Visual theme for the button icon color.",
       },
     ],
   },

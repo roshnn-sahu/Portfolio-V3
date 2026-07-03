@@ -106,7 +106,7 @@ const PORTFOLIO_LINKS: CommandLinkItem[] = [
 const SOCIAL_LINK_ITEMS: CommandLinkItem[] = [
   {
     title: "X",
-    href: "https://x.com/RoshanS72056",
+    href: "https://x.com/hloRoshan",
     icon: NewTwitterIcon,
     openInNewTab: true,
   },
@@ -118,7 +118,7 @@ const SOCIAL_LINK_ITEMS: CommandLinkItem[] = [
   },
   {
     title: "LinkedIn",
-    href: "https://www.linkedin.com/in/roshan-sahu-72b91b371/",
+    href: "https://www.linkedin.com/in/roshann-sahu",
     icon: Linkedin01Icon,
     openInNewTab: true,
   },

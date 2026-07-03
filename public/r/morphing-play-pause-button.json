@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "morphing-play-pause-button",
+  "title": "Morphing Play/Pause Button",
+  "description": "A morphing play/pause button with smooth SVG path animations using Motion spring transitions.",
+  "type": "registry:block",
+  "dependencies": ["motion"],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/morphing-play-pause-button/play-pause-button.tsx",
+      "type": "registry:component"
+    }
+  ]
+}

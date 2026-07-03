@@ -14,7 +14,8 @@ export interface RegistryComponent {
   description: string;
   category?: string;
   component: ComponentType<any>;
-  previewUrl?: string    
+  previewUrl?: string;
+  sourceFile?: string;
   installation: {
     cli: string;
     registry: string;

@@ -30,6 +30,20 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "morphing-play-pause-button",
+      "type": "registry:block",
+      "title": "Morphing Play/Pause Button",
+      "description": "A morphing play/pause button with smooth SVG path animations using Motion spring transitions.",
+      "dependencies": ["motion"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/morphing-play-pause-button/play-pause-button.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

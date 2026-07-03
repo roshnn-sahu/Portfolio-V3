@@ -4,7 +4,7 @@ import { SITE_CONFIG } from "./site";
 export const defaultWebsiteMetadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
   title: {
-    default: `${SITE_CONFIG.name} \u2013 Developer`,
+    default: `${SITE_CONFIG.name} \u2013 Full Stack Developer`,
     template: `%s | ${SITE_CONFIG.name}`,
   },
   description: SITE_CONFIG.description,
