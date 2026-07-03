@@ -343,7 +343,7 @@ code[data-line-numbers] [data-line]::before {
   box-shadow: none !important;
 }
 
-/* Apply the custom cursor globally */
+/* Apply the custom cursor globally: black in light mode */
 html,
 body,
 a,
@@ -353,7 +353,22 @@ input[type="submit"],
 .cursor-pointer,
 [class*="cursor-pointer"] {
   cursor:
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 1L14 7.5L7.5 9L6 14L1 1Z" fill="black" stroke="white" stroke-width="0.5"/></svg>')
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="black" stroke="white" stroke-width="0.5"/></svg>')
+      1 1,
+    auto !important;
+}
+
+/* Dark mode override: white cursor for contrast */
+.dark html,
+.dark body,
+.dark a,
+.dark button,
+.dark [role="button"],
+.dark input[type="submit"],
+.dark .cursor-pointer,
+.dark [class*="cursor-pointer"] {
+  cursor:
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="white" stroke="black" stroke-width="0.5"/></svg>')
       1 1,
     auto !important;
 }
