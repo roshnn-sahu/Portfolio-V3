@@ -8,8 +8,8 @@ export default function Overview() {
     <section className="font-geist-sans">
       <motion.div>
         <p className="text-muted-foreground">
-          Full-stack engineer building scalable apps and clean product
-          experiences.
+          I design and build scalable web applications focused on simple,
+          polished user experiences.
         </p>
         <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
           <li>
@@ -47,9 +47,9 @@ export default function Overview() {
               className="font-medium text-foreground underline-offset-4 hover:underline"
               aria-label="Visit github"
             >
-              GitHub 
-            </Link>
-             {" "}or email me at{" "}
+              GitHub
+            </Link>{" "}
+            or email me at{" "}
             <span>
               <Link
                 href="mailto:hello.roshan004@gmail.com"
