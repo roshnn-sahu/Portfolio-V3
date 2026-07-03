@@ -3,7 +3,9 @@ import ExpandableCardDemo from "@/registry/default/expandable.card/demo";
 import MorphingPlayPauseButtonDemo from "@/registry/default/morphing-play-pause-button/demo";
 
 import { RegistryComponent } from "@/types/component";
+
 const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+
 export const components: RegistryComponent[] = [
   {
     slug: "interactive-navbar",

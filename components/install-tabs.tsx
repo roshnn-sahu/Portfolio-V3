@@ -20,7 +20,7 @@ function getCommand(manager: string, url: string): string {
     case "pnpm":
       return `pnpm dlx shadcn@latest add ${url}`;
     case "yarn":
-      return `npx shadcn@latest add ${url}`;
+      return `yarn dlx shadcn@latest add ${url}`;
     case "bun":
       return `bunx --bun shadcn@latest add ${url}`;
     default:
@@ -35,14 +35,18 @@ export function InstallTabs({ url }: InstallTabsProps) {
     <Tabs
       defaultValue="pnpm"
       onValueChange={setActiveTab}
-      className={cn("w-full gap-0 overflow-hidden rounded-lg border ",
+      className={cn(
+        "w-full gap-0 overflow-hidden rounded-lg border",
         "dark;border-zinc-800"
       )}
     >
       {/* Unified Terminal Header Row */}
-      <div className={cn("relative flex items-center justify-between border-b bg-muted/50 px-4 py-2",
-        "dark:border-zinc-800 "
-      )}>
+      <div
+        className={cn(
+          "relative flex items-center justify-between border-b bg-muted/50 px-4 py-2",
+          "dark:border-zinc-800"
+        )}
+      >
         <div className="flex items-center gap-3">
           {/* Terminal Promp Icon */}
           <Terminal className="size-5 border text-zinc-500" />
@@ -53,7 +57,8 @@ export function InstallTabs({ url }: InstallTabsProps) {
               <TabsTrigger
                 key={manager}
                 value={manager}
-                className={cn("rounded-md font-geist-sans text-xs font-medium transition-all shadow-none ",
+                className={cn(
+                  "rounded-md font-geist-sans text-xs font-medium shadow-none transition-all",
                   ""
                 )}
               >

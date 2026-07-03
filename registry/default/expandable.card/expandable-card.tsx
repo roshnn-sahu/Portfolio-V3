@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
+
 const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 
 interface ExpandableCardItem {
