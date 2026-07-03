@@ -1,7 +1,6 @@
 import { unstable_cache } from "next/cache";
-
 import type { Activity } from "@/components/kibo-ui/contribution-graph";
-// import { GITHUB_USERNAME } from "@/config/site";
+import {config} from "@/config/config";
 
 export const GITHUB_USERNAME = "roshnn-sahu";
 
@@ -11,7 +10,7 @@ type GitHubContributionsResponse = {
 
 export const getGitHubContributions = unstable_cache(
   async () => {
-    const apiUrl =process.env.GITHUB_CONTRIBUTIONS_API_URL || "https://github-contributions-api.jogruber.de";
+    const apiUrl = config.githubContributionApiUrl;
  
     console.info(`Fetching GitHub contributions for ${GITHUB_USERNAME}...`);
 

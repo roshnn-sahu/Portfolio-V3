@@ -2,8 +2,9 @@ import { createHash } from "crypto";
 import { LRUCache } from "lru-cache";
 import type { ShikiTransformer } from "shiki";
 import { codeToHtml } from "shiki";
+import { config } from "@/config/config";
 
-const isDev = process.env.NODE_ENV === "development";
+const isDev = config.nodeEnv === "development";
 
 // LRU cache for cross-request caching of highlighted code.
 // Shiki highlighting is CPU-intensive and deterministic, so caching is safe.
@@ -72,4 +73,3 @@ export async function highlightCode(code: string, language: string = "tsx") {
 
   return html;
 }
-

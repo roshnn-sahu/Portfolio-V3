@@ -1,10 +1,11 @@
 import InteractiveNavbarDemo from "@/registry/default/interactive-navbar/demo";
 import ExpandableCardDemo from "@/registry/default/expandable.card/demo";
 import MorphingPlayPauseButtonDemo from "@/registry/default/morphing-play-pause-button/demo";
+import { config } from "@/config/config";
 
 import { RegistryComponent } from "@/types/component";
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+const baseUrl = config.baseUrl;
 
 export const components: RegistryComponent[] = [
   {
@@ -135,7 +136,8 @@ export default function Example() {
       "A morphing play/pause button with smooth SVG path animations using Motion spring transitions.",
     category: "Buttons",
     component: MorphingPlayPauseButtonDemo,
-    sourceFile: "registry/default/morphing-play-pause-button/play-pause-button.tsx",
+    sourceFile:
+      "registry/default/morphing-play-pause-button/play-pause-button.tsx",
     installation: {
       cli: `npx shadcn@latest add ${baseUrl}/r/morphing-play-pause-button.json`,
       registry: `${baseUrl}/r/morphing-play-pause-button.json`,
