@@ -1,5 +1,3 @@
-import { promises as fs } from "fs";
-import path from "path";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -27,6 +25,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = (await params).slug;
+
   const component = components.find((item) => item.slug === slug);
 
   if (!component) {
@@ -41,6 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ComponentSlugPage({ params }: Props) {
   const slug = (await params).slug;
+
   const component = components.find((item) => item.slug === slug);
 
   if (!component) {
@@ -51,16 +51,7 @@ export default async function ComponentSlugPage({ params }: Props) {
   const registryUrl =
     typeof component.installation === "string"
       ? component.installation
-      : component.installation.registry;  // Read source file for Manual install tab
-  let manualCode: string | undefined;
-  if (component.sourceFile) {
-    try {
-      const filePath = path.join(process.cwd(), component.sourceFile);
-      manualCode = await fs.readFile(filePath, "utf-8");
-    } catch {
-      // If file can't be read, silently fall back to CLI-only
-    }
-  }
+      : component.installation.registry;
 
   // Prev / Next index calculations
   const currentIndex = components.findIndex((item) => item.slug === slug);
@@ -70,6 +61,7 @@ export default async function ComponentSlugPage({ params }: Props) {
   const next =
     currentIndex < components.length - 1 ? components[currentIndex + 1] : null;
 const PreviewComponent  = component.component;
+
 
   return (
     <main className="container mx-auto max-w-4xl py-10">
@@ -142,6 +134,7 @@ const PreviewComponent  = component.component;
         <section className="space-y-4">
           <ComponentPreview
             preview={<PreviewComponent />}
+ 
             code={component.usage}
             filename={`components/${slug}.tsx`}
           >
@@ -152,7 +145,7 @@ const PreviewComponent  = component.component;
         {/* 2. COMPONENT INSTALLATION */}
         <section id="installation" className="space-y-6 pt-6">
           <h2 className="text-xl tracking-tight">Installation</h2>
-          <InstallTabs url={registryUrl} manualCode={manualCode} />
+          <InstallTabs url={registryUrl} />
         </section>
 
         {/* 3. USAGE */}

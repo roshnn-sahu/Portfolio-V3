@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Terminal, FileCode } from "lucide-react";
+import { Terminal } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { CodeBlock } from "@/components/component/code-block";
 import { CopyButton } from "@/components/copy-button";
@@ -9,7 +9,6 @@ import { cn } from "@/lib/utils";
 
 interface InstallTabsProps {
   url: string;
-  manualCode?: string;
 }
 
 const PACKAGE_MANAGERS = ["npm", "pnpm", "yarn", "bun"] as const;
@@ -29,103 +28,59 @@ function getCommand(manager: string, url: string): string {
   }
 }
 
-export function InstallTabs({ url, manualCode }: InstallTabsProps) {
-  const [installTab, setInstallTab] = React.useState<string>("cli");
-  const [activeManager, setActiveManager] = React.useState<string>("pnpm");
+export function InstallTabs({ url }: InstallTabsProps) {
+  const [activeTab, setActiveTab] = React.useState<string>("pnpm");
 
   return (
     <Tabs
-      value={installTab}
-      onValueChange={setInstallTab}
-      className={cn(
-        "w-full gap-0 overflow-hidden rounded-lg border",
-        "dark:border-zinc-800"
+      defaultValue="pnpm"
+      onValueChange={setActiveTab}
+      className={cn("w-full gap-0 overflow-hidden rounded-lg border ",
+        "dark;border-zinc-800"
       )}
     >
-      {/* Header row with CLI / Manual tabs */}
-      <div
-        className={cn(
-          "relative flex items-center justify-between border-b bg-muted/50 px-4 py-2",
-          "dark:border-zinc-800"
-        )}
-      >
+      {/* Unified Terminal Header Row */}
+      <div className={cn("relative flex items-center justify-between border-b bg-muted/50 px-4 py-2",
+        "dark:border-zinc-800 "
+      )}>
         <div className="flex items-center gap-3">
-          {/* Icon */}
-          {installTab === "cli" ? (
-            <Terminal className="size-5 text-zinc-500" />
-          ) : (
-            <FileCode className="size-5 text-zinc-500" />
-          )}
+          {/* Terminal Promp Icon */}
+          <Terminal className="size-5 border text-zinc-500" />
 
-          {/* CLI / Manual primary tabs */}
+          {/* Package Manager Minimal Pills Layout */}
           <TabsList className="h-auto gap-1 bg-transparent p-0">
-            <TabsTrigger
-              value="cli"
-              className="rounded-md font-geist-sans text-xs font-medium transition-all shadow-none"
-            >
-              CLI
-            </TabsTrigger>
-            {manualCode && (
-              <TabsTrigger
-                value="manual"
-                className="rounded-md font-geist-sans text-xs font-medium transition-all shadow-none"
-              >
-                Manual
-              </TabsTrigger>
-            )}
-          </TabsList>
-        </div>
-
-        {/* Copy button — shows command in CLI mode, shows full code in Manual mode */}
-        {installTab === "cli" ? (
-          <CopyButton value={getCommand(activeManager, url)} title="Copy command" />
-        ) : (
-          <CopyButton value={manualCode ?? ""} title="Copy code" />
-        )}
-      </div>
-
-      {/* CLI Tab Content — Package manager sub-tabs */}
-      <TabsContent value="cli" className="mt-0 focus-visible:outline-hidden">
-        {/* Sub-header with package manager pills */}
-        <div className="flex items-center gap-2 border-b border-zinc-200 px-4 py-1.5 dark:border-zinc-800">
-          <span className="text-[10px] font-medium uppercase tracking-wider text-zinc-400">
-            Package Manager
-          </span>
-          <div className="flex items-center gap-1">
             {PACKAGE_MANAGERS.map((manager) => (
-              <button
+              <TabsTrigger
                 key={manager}
-                onClick={() => setActiveManager(manager)}
-                className={cn(
-                  "rounded-md px-2 py-0.5 text-xs font-medium transition-colors",
-                  activeManager === manager
-                    ? "bg-zinc-200 text-zinc-900 dark:bg-zinc-700 dark:text-zinc-100"
-                    : "text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200"
+                value={manager}
+                className={cn("rounded-md font-geist-sans text-xs font-medium transition-all shadow-none ",
+                  ""
                 )}
               >
                 {manager}
-              </button>
+              </TabsTrigger>
             ))}
-          </div>
+          </TabsList>
         </div>
 
-        <CodeBlock
-          code={getCommand(activeManager, url)}
-          language="bash"
-          className="scrollbar-none w-full border-0 p-0 [&_button]:hidden"
-        />
-      </TabsContent>
+        <CopyButton value={getCommand(activeTab, url)} title="Copy command" />
+      </div>
 
-      {/* Manual Tab Content — Raw source code */}
-      {manualCode && (
-        <TabsContent value="manual" className="mt-0 focus-visible:outline-hidden">
+      {/* Terminal Code Body */}
+      {PACKAGE_MANAGERS.map((manager) => (
+        <TabsContent
+          key={manager}
+          value={manager}
+          className="mt-0 focus-visible:outline-hidden"
+        >
+          {/* '[&_button]:hidden' targeting safely hides the inner duplicate floating copy icon */}
           <CodeBlock
-            code={manualCode}
-            language="tsx"
+            code={getCommand(manager, url)}
+            language="bash"
             className="scrollbar-none w-full border-0 p-0 [&_button]:hidden"
           />
         </TabsContent>
-      )}
+      ))}
     </Tabs>
   );
 }
