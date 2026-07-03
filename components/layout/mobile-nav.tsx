@@ -51,4 +51,3 @@ export default function MobileNav({ items }: { items: NavItem[] }) {
     </DropdownMenu>
   );
 }
-

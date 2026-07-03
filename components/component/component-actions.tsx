@@ -4,15 +4,15 @@ import * as React from "react";
 import Link from "next/link";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowLeft02Icon, ArrowRight02Icon } from "@hugeicons/core-free-icons";
-import { 
-  Copy, 
-  ChevronDown, 
-  FileText, 
-  Terminal, 
-  Bot, 
-  Sparkles, 
+import {
+  Copy,
+  ChevronDown,
+  FileText,
+  Terminal,
+  Bot,
+  Sparkles,
   Cpu,
-  Check
+  Check,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -29,7 +29,12 @@ interface PageActionsProps {
   nextTitle?: string;
 }
 
-export function PageActions({ prevSlug, nextSlug, prevTitle, nextTitle }: PageActionsProps) {
+export function PageActions({
+  prevSlug,
+  nextSlug,
+  prevTitle,
+  nextTitle,
+}: PageActionsProps) {
   const [hasCopied, setHasCopied] = React.useState(false);
 
   const handleCopyPage = async (platform: string) => {
@@ -59,42 +64,42 @@ export function PageActions({ prevSlug, nextSlug, prevTitle, nextTitle }: PageAc
             <ChevronDown className="h-3.5 w-3.5 text-zinc-600 transition-transform duration-200" />
           </button>
         </DropdownMenuTrigger>
-        
-        <DropdownMenuContent 
-          align="end" 
+
+        <DropdownMenuContent
+          align="end"
           className="w-[180px] border-zinc-800 bg-zinc-950/95 p-1 text-zinc-200 backdrop-blur-md"
         >
-          <DropdownMenuItem 
+          <DropdownMenuItem
             onClick={() => handleCopyPage("markdown")}
-            className="flex items-center gap-2.5 rounded-md px-2 py-1.5 text-xs text-zinc-400 focus:bg-zinc-900 focus:text-zinc-100 cursor-pointer"
+            className="flex cursor-pointer items-center gap-2.5 rounded-md px-2 py-1.5 text-xs text-zinc-400 focus:bg-zinc-900 focus:text-zinc-100"
           >
             <FileText className="h-3.5 w-3.5 text-zinc-500" />
             <span>View as Markdown</span>
           </DropdownMenuItem>
-          <DropdownMenuItem 
+          <DropdownMenuItem
             onClick={() => handleCopyPage("v0")}
-            className="flex items-center gap-2.5 rounded-md px-2 py-1.5 text-xs text-zinc-400 focus:bg-zinc-900 focus:text-zinc-100 cursor-pointer"
+            className="flex cursor-pointer items-center gap-2.5 rounded-md px-2 py-1.5 text-xs text-zinc-400 focus:bg-zinc-900 focus:text-zinc-100"
           >
             <Terminal className="h-3.5 w-3.5 text-zinc-500" />
             <span>Open in v0</span>
           </DropdownMenuItem>
-          <DropdownMenuItem 
+          <DropdownMenuItem
             onClick={() => handleCopyPage("chatgpt")}
-            className="flex items-center gap-2.5 rounded-md px-2 py-1.5 text-xs text-zinc-400 focus:bg-zinc-900 focus:text-zinc-100 cursor-pointer"
+            className="flex cursor-pointer items-center gap-2.5 rounded-md px-2 py-1.5 text-xs text-zinc-400 focus:bg-zinc-900 focus:text-zinc-100"
           >
             <Bot className="h-3.5 w-3.5 text-zinc-500" />
             <span>Open in ChatGPT</span>
           </DropdownMenuItem>
-          <DropdownMenuItem 
+          <DropdownMenuItem
             onClick={() => handleCopyPage("claude")}
-            className="flex items-center gap-2.5 rounded-md px-2 py-1.5 text-xs text-zinc-400 focus:bg-zinc-900 focus:text-zinc-100 cursor-pointer"
+            className="flex cursor-pointer items-center gap-2.5 rounded-md px-2 py-1.5 text-xs text-zinc-400 focus:bg-zinc-900 focus:text-zinc-100"
           >
             <Sparkles className="h-3.5 w-3.5 text-zinc-500" />
             <span>Open in Claude</span>
           </DropdownMenuItem>
-          <DropdownMenuItem 
+          <DropdownMenuItem
             onClick={() => handleCopyPage("scira")}
-            className="flex items-center gap-2.5 rounded-md px-2 py-1.5 text-xs text-zinc-400 focus:bg-zinc-900 focus:text-zinc-100 cursor-pointer"
+            className="flex cursor-pointer items-center gap-2.5 rounded-md px-2 py-1.5 text-xs text-zinc-400 focus:bg-zinc-900 focus:text-zinc-100"
           >
             <Cpu className="h-3.5 w-3.5 text-zinc-500" />
             <span>Open in Scira</span>
@@ -112,7 +117,7 @@ export function PageActions({ prevSlug, nextSlug, prevTitle, nextTitle }: PageAc
           <HugeiconsIcon icon={ArrowLeft02Icon} size={16} strokeWidth={2} />
         </Link>
       ) : (
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-900 bg-zinc-950/20 text-zinc-700 cursor-not-allowed">
+        <div className="flex h-8 w-8 cursor-not-allowed items-center justify-center rounded-lg border border-zinc-900 bg-zinc-950/20 text-zinc-700">
           <HugeiconsIcon icon={ArrowLeft02Icon} size={16} strokeWidth={2} />
         </div>
       )}
@@ -127,7 +132,7 @@ export function PageActions({ prevSlug, nextSlug, prevTitle, nextTitle }: PageAc
           <HugeiconsIcon icon={ArrowRight02Icon} size={16} strokeWidth={2} />
         </Link>
       ) : (
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-900 bg-zinc-950/20 text-zinc-700 cursor-not-allowed">
+        <div className="flex h-8 w-8 cursor-not-allowed items-center justify-center rounded-lg border border-zinc-900 bg-zinc-950/20 text-zinc-700">
           <HugeiconsIcon icon={ArrowRight02Icon} size={16} strokeWidth={2} />
         </div>
       )}

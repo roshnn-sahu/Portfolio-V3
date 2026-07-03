@@ -55,7 +55,6 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
-  
 
   --animate-fade-in: fade-in var(--tw-duration, 200ms) ease-out;
   --animate-fade-out: fade-out var(--tw-duration, 200ms) ease-out;
@@ -342,4 +341,19 @@ code[data-line-numbers] [data-line]::before {
   border-radius: 0 !important;
   padding: 0 !important;
   box-shadow: none !important;
+}
+
+/* Apply the custom cursor globally */
+html,
+body,
+a,
+button,
+[role="button"],
+input[type="submit"],
+.cursor-pointer,
+[class*="cursor-pointer"] {
+  cursor:
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 1L14 7.5L7.5 9L6 14L1 1Z" fill="black" stroke="white" stroke-width="0.5"/></svg>')
+      1 1,
+    auto !important;
 }

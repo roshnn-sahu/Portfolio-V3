@@ -20,10 +20,7 @@ import {
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { cn } from "@/lib/utils";
-import {
-  Experience,
-  ExperiencePosition,
-} from "@/types/experiences";
+import { Experience, ExperiencePosition } from "@/types/experiences";
 
 interface ExperienceCardProps {
   experience: Experience;
@@ -181,7 +178,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
               alt={`${companyName} logo`}
               width={30}
               height={30}
-              className="rounded-full border dark:bg-white h-6 w-8"
+              className="h-6 w-8 rounded-full border dark:bg-white"
               unoptimized
             />
           ) : (
@@ -271,4 +268,3 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
     </article>
   );
 }
-

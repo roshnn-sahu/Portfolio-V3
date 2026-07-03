@@ -32,7 +32,9 @@ const PlayPauseButton = ({ theme = "light" }: PlayPauseButtonProps) => {
     <button
       className={cn(
         "glass-button group/btn relative flex h-24 w-24 cursor-pointer items-center justify-center overflow-hidden rounded-full border backdrop-blur-md",
-        theme === "light" ? "border-neutral-600/50 text-neutral-600" : "text-white border-white/50"
+        theme === "light"
+          ? "border-neutral-600/50 text-neutral-600"
+          : "border-white/50 text-white"
       )}
       onClick={() => setIsPlaying(!isPlaying)}
       aria-label={isPlaying ? "Play" : "Pause"}

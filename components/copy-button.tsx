@@ -29,7 +29,7 @@ export function CopyButton({ value, className, ...props }: CopyButtonProps) {
         "flex size-7 items-center justify-center rounded-md border",
         "border-zinc-200 bg-background text-zinc-500",
         "dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-500",
-        "transition-colors cursor-pointer",
+        "cursor-pointer transition-colors",
         "hover:border-zinc-300 hover:bg-zinc-50 hover:text-zinc-600",
         "dark:hover:border-zinc-700 dark:hover:bg-zinc-900 dark:hover:text-zinc-200",
         className
