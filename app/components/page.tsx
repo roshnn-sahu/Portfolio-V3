@@ -1,5 +1,23 @@
+import { Metadata } from "next";
 import { ComponentCard } from "@/components/component/component-card";
 import { components } from "@/lib/data/components/components";
+import { generateWebsiteMetadata } from "@/config/metadata";
+
+export const metadata: Metadata = generateWebsiteMetadata({
+  title: "Components",
+  description:
+    "Reusable UI components built with Next.js, Tailwind CSS, and Framer Motion. Interactive navbar, expandable cards, magnetic buttons, and more.",
+  keywords: [
+    "React components",
+    "UI components",
+    "shadcn components",
+    "Roshan components",
+    "interactive navbar",
+    "magnetic button",
+    "expandable card",
+  ],
+  url: "/components",
+});
 
 export default function ComponentsPage() {
   return (

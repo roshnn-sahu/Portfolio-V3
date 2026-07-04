@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { GeistPixelSquare } from "geist/font/pixel";
 import "@/styles/globals.css";
@@ -9,6 +9,16 @@ import ThemeProvider from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { defaultWebsiteMetadata } from "@/config/metadata";
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+  ],
+  colorScheme: "dark light",
+  width: "device-width",
+  initialScale: 1,
+};
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

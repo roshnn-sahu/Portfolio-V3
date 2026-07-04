@@ -17,11 +17,19 @@ import { InstallTabs } from "@/components/install-tabs";
 import { PropsTable } from "@/components/props-table";
 import { MDX } from "@/components/mdx";
 import { cn } from "@/lib/utils";
+import { generateWebsiteMetadata } from "@/config/metadata";
+import { SITE_CONFIG } from "@/config/site";
 
 interface Props {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export function generateStaticParams() {
+  return components.map((component) => ({
+    slug: component.slug,
+  }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -33,10 +41,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return notFound();
   }
 
-  return {
-    title: `${component.title} | Roshan Sahu`,
+  return generateWebsiteMetadata({
+    title: `${component.title} | Components`,
     description: component.description,
-  };
+    url: `/components/${component.slug}`,
+    keywords: [
+      component.title.toLowerCase().replace(/\s+/g, " "),
+      `${component.title} React component`,
+      `${component.title} shadcn`,
+      ...(component.category ? [component.category.toLowerCase()] : []),
+    ],
+  });
 }
 
 export default async function ComponentSlugPage({ params }: Props) {
@@ -47,6 +62,23 @@ export default async function ComponentSlugPage({ params }: Props) {
   if (!component) {
     notFound();
   }
+
+  const componentUrl = `${SITE_CONFIG.url}/components/${component.slug}`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: component.title,
+    description: component.description,
+    url: componentUrl,
+    keywords: [component.title, ...(component.features ?? [])],
+    ...(component.category ? { applicationCategory: component.category } : {}),
+    author: {
+      "@type": "Person",
+      name: SITE_CONFIG.author,
+      url: SITE_CONFIG.url,
+    },
+  };
 
   // Registry URL for install tabs
   const registryUrl =
@@ -64,7 +96,14 @@ export default async function ComponentSlugPage({ params }: Props) {
   const PreviewComponent = component.component;
 
   return (
-    <main className="container mx-auto max-w-4xl py-10">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <main className="container mx-auto max-w-4xl py-10">
       <div className="space-y-10">
         {/* Top Navigation Bar */}
         <div className="flex items-center justify-between">
@@ -188,5 +227,6 @@ export default async function ComponentSlugPage({ params }: Props) {
         )}
       </div>
     </main>
+    </>
   );
 }
