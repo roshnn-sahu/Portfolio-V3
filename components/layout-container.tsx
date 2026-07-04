@@ -12,7 +12,7 @@ export default function LayoutContainer({
 
   return (
     <div
-      className={`relative container mx-auto border border-dashed border-x border-border ${
+      className={`relative container mx-auto border border-x border-border ${
         isComponentSlug ? "max-w-6xl" : "md:max-w-170"
       }`}
     >

@@ -34,11 +34,6 @@ export default function Example() {
 }`,
 
   props: [
-    {
-      name: "links",
-      type: "NavLink[]",
-      default: "[]",
-      description: "Navigation links.",
-    },
+
   ],
 };

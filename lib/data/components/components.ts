@@ -1,6 +1,7 @@
 import InteractiveNavbarDemo from "@/registry/default/interactive-navbar/demo";
 import ExpandableCardDemo from "@/registry/default/expandable.card/demo";
 import MorphingPlayPauseButtonDemo from "@/registry/default/morphing-play-pause-button/demo";
+import MagneticButtonDemo from "@/registry/default/magnetic-button/demo";
 import { config } from "@/config/config";
 
 import { RegistryComponent } from "@/types/component";
@@ -161,6 +162,53 @@ export default function Example() {
         type: '"light" | "dark"',
         default: '"light"',
         description: "Visual theme for the button icon color.",
+      },
+    ],
+  },
+  {
+    slug: "magnetic-button",
+    previewUrl: "/preview/magnetic-button",
+    title: "Magnetic Button",
+    description:
+      "A modern magnetic button component with smooth magnetic hover effect.",
+    category: "Buttons",
+    component: MagneticButtonDemo,
+    sourceFile: "registry/default/magnetic-button/magnetic-button.tsx",
+    installation: {
+      cli: `npx shadcn@latest add ${baseUrl}/r/magnetic-button.json`,
+      registry: `${baseUrl}/r/magnetic-button.json`,
+    },
+    dependencies: ["motion"],
+    features: [
+      "Magnetic hover effect",
+      "Smooth spring animations",
+      "Customizable colors and sizes",
+      "Accessible with keyboard navigation",
+      "Lightweight and performant",
+    ],
+    usage: `import MagneticButton from "@/components/ui/magnetic-button"
+
+export default function Example() {
+  return <MagneticButton />
+}`,
+    props: [
+      {
+        name: "children",
+        type: "React.ReactNode",
+        default: '"Magnetic Button"',
+        description: "The content inside the button.",
+      },
+      {
+        name: "strength",
+        type: "number",
+        default: "0.8",
+        description: "Magnetic pull strength factor.",
+      },
+      {
+        name: "maxDistance",
+        type: "number",
+        default: "100",
+        description: "Maximum distance in pixels for the magnetic effect.",
       },
     ],
   },

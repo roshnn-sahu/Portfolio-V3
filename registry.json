@@ -44,6 +44,20 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "magnetic-button",
+      "type": "registry:block",
+      "title": "Magnetic Button",
+      "description": "A modern magnetic button component with smooth magnetic hover effect.",
+      "dependencies": ["motion"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/magnetic-button/magnetic-button.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
