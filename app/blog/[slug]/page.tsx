@@ -46,7 +46,8 @@ export async function generateMetadata({
   const { title, description, image, createdAt, updatedAt } = post.metadata;
 
   const postUrl = getPostUrl(post);
-  const ogImage = image || "/images/opengraph-image.png";
+  const ogImage =
+    image || `/og/simple?title=${encodeURIComponent(title)}`;
 
   return generateWebsiteMetadata({
     title,
