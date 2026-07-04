@@ -1,9 +1,12 @@
-import React from 'react'
-import MagneticButton from  "./magnetic-button"
+import React from "react";
+import MagneticButton from "./magnetic-button";
 
 const MagneticButtonDemo = () => {
-  return   <MagneticButton/>
- 
-}
+  return (
+    <div className="flex min-h-[400px] w-full items-center justify-center overflow-hidden rounded-xl bg-transparent">
+      <MagneticButton />
+    </div>
+  );
+};
 
-export default MagneticButtonDemo
+export default MagneticButtonDemo;
