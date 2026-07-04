@@ -18,6 +18,8 @@ export const SITE_CONFIG = {
     "Roshan Sahu",
     "roshan sahu",
     "roshan dev",
+    "dev roshan sahu",
+    "developer roshan sahu",
     "roshan full stack developer",
     "roshan dev portfolio",
     "roshan portfolio",
@@ -26,6 +28,7 @@ export const SITE_CONFIG = {
     "typescript",
     "react",
     "next.js",
+    "MERN Developer",
   ],
   author: "Roshan Sahu",
 };
