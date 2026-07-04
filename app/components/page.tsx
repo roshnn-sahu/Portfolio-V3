@@ -34,7 +34,7 @@ export default function ComponentsPage() {
           Motion.
         </p>
       </header>
-      <div className="group/cards grid  md:grid-cols-2 lg:grid-cols-3">
+      <div className="group/cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {components.reverse().map((component, idx) => (
           <ComponentCard key={component.slug} {...component} idx={idx} />
         ))}

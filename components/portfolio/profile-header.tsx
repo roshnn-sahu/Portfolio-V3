@@ -20,7 +20,7 @@ export default function ProfileHeader() {
           <h2 className="font-geist-sans text-lg font-medium">Roshan Sahu</h2>
           <BlurShimmerText
           className="font-geist-pixel-square text-muted-foreground"
-            texts={["Full-Stack Developer", "Design Engineer","Design Sense Matters", "Open to Work"]}
+            texts={["Full-Stack Developer", "Design Engineer","Design Matters", "Open to Work"]}
           />
      
         </div>
