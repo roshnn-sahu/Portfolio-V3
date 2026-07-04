@@ -42,6 +42,9 @@ export const defaultWebsiteMetadata: Metadata = {
   icons: {
     icon: "/images/avatar.png",
   },
+  verification: {
+    google: "MF6YaAtE-uSdvobkd4b08sNLYjCrHbz-hkL-0mCvDtk",
+  },
 };
 
 interface GenerateMetadataParams {
