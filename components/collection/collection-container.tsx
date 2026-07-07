@@ -10,6 +10,7 @@ export default function CollectionContainer() {
   const [selectedGenre, setSelectedGenre] = React.useState("all");
 
   const allGenres = React.useMemo(() => {
+    
     const genres = new Set<string>();
     COLLECTION.moviesAndShows.forEach((item) => {
       item.genre.forEach((g) => genres.add(g));
