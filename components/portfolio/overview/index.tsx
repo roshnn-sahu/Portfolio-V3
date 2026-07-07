@@ -19,11 +19,11 @@ export default function Overview() {
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-foreground underline underline-offset-4"
-              aria-label="Visit draftlogo"
+              aria-label="Visit BoltCreator"
             >
-              DocumateAI
+              BoltCreator
             </Link>
-            , a RAG-based AI chatbot for PDFs and documents.
+            , an AI-powered thumbnail generator for social growth.
           </li>
           <li>
             Focused on modern architecture, performance, and product clarity.

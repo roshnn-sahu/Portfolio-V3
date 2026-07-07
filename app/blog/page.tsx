@@ -14,6 +14,7 @@ export const metadata: Metadata = generateWebsiteMetadata({
 export default function BlogPage() {
   const allPosts = getAllPosts();
 
+
   return (
     <section
       className="h-[calc(100svh-16rem)] space-y-12 pt-8"
@@ -29,7 +30,7 @@ export default function BlogPage() {
         </p>
       </header>
       <div className="group divide-y divide-border font-geist-sans *:py-3 first:*:pt-0">
-        {allPosts.map((post) => (
+        {allPosts?.map((post) => (
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
