@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
+import { Icons } from "@/components/icons";
 import {
   Collapsible,
   CollapsibleContent,
@@ -28,144 +30,113 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const [isOpen, setIsOpen] = React.useState(project.isExpanded ?? false);
 
   return (
-    <article
-      className="font-geist-sans"
-      itemScope
-      itemType="https://schema.org/SoftwareApplication"
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Visit ${project.title}`}
+      className="group/post hover:bg-accent-muted/80 relative flex h-full flex-col border-2 border-dashed transition-colors hover:border-accent-foreground/20"
     >
-      <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-full">
-        <CollapsibleTrigger className="w-full cursor-pointer text-left">
-          <header className="flex w-full items-center justify-between gap-3">
-            <div className="flex min-w-0 flex-1 items-center gap-3">
-              {project.logo && (
-                <div className="shrink-0 select-none">
-                  <img
-                    src={project.logo || ""}
-                    alt={`${project.title} logo`}
-                    className="h-6 w-6 rounded-full border"
-                    itemProp="image"
-                  />
+      <article
+        className="font-geist-sans"
+        itemScope
+        itemType="https://schema.org/SoftwareApplication"
+      >
+        <div className="absolute -top-px -left-px h-2 w-2 border-t border-l border-foreground/90" />
+        <div className="absolute -top-px -right-px h-2 w-2 border-t border-r border-foreground/90" />
+        <div className="absolute -right-px -bottom-px h-2 w-2 border-r border-b border-foreground/90" />
+        <div className="absolute -bottom-px -left-px h-2 w-2 border-b border-l border-foreground/90" />
+        <div className="relative p-2 select-none">
+          {project.coverImage ? (
+            <Image
+              className="aspect-1200/630 rounded-xs grayscale transition-[filter] duration-300 ease-[cubic-bezier(0.42,0,0.58,1)] group-hover/post:grayscale-0"
+              src={project.coverImage}
+              alt={`${project.title} cover`}
+              width={1200}
+              height={630}
+              quality={100}
+              loading="lazy"
+            />
+          ) : (
+            <h4 className="aspect-1200/630 text-center">{project.title}</h4>
+          )}
+        </div>
+        <div className="flex flex-col gap-2 px-3 py-2">
+          <div className="flex items-center gap-2">
+            <div className="shrink-0 select-none">
+              <img
+                src={project.logo}
+                alt={`${project.title} logo`}
+                className="h-4 w-4 rounded-lg border grayscale transition-[filter] duration-300 ease-[cubic-bezier(0.42,0,0.58,1)] group-hover/post:grayscale-0"
+                itemProp="image"
+              />
+            </div>
+            <div className="flex w-full items-center justify-between gap-2">
+              <h3
+                className="truncate font-geist-sans text-sm font-medium text-foreground"
+                itemProp="name"
+              >
+                {project.title}
+              </h3>
+              {project.github && (
+                <div className="shrink-0">
+                  <Tooltip>
+                    <TooltipTrigger
+                      render={
+                        <a
+                          className="relative flex size-6 shrink-0 items-center justify-center text-foreground transition-colors after:absolute after:-inset-2"
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          aria-label={`Open ${project.title} project link`}
+                          itemProp="url"
+                        >
+                          <Icons.github className="size-4" />
+                          <span className="sr-only">Open Github Repo</span>
+                        </a>
+                      }
+                    />
+                    <TooltipContent className="font-geist-sans">
+                      <p>Open Github Repo</p>
+                    </TooltipContent>
+                  </Tooltip>
                 </div>
               )}
-              <div className="min-w-0 flex-1">
-                <h3
-                  className="truncate font-medium text-foreground"
-                  itemProp="name"
-                >
-                  {project.title}
-                </h3>
-              </div>
             </div>
-            <div className="shrink-0">
-              <Tooltip>
-                <TooltipTrigger
-                  render={
-                    <a
-                      className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground transition-colors after:absolute after:-inset-2 hover:text-foreground"
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      aria-label={`Open ${project.title} project link`}
-                      itemProp="url"
-                    >
-                      <HugeiconsIcon
-                        icon={GithubIcon}
-                        strokeWidth={2}
-                        className="size-4"
-                      />
-                      <span className="sr-only">Open Github Repo</span>
-                    </a>
-                  }
-                />
-                <TooltipContent className="font-geist-sans">
-                  <p>Open Github Repo</p>
-                </TooltipContent>
-              </Tooltip>
-            </div>
-            <div className="shrink-0">
-              <Tooltip>
-                <TooltipTrigger
-                  render={
-                    <a
-                      className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground transition-colors after:absolute after:-inset-2 hover:text-foreground"
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      aria-label={`Open ${project.title} project link`}
-                      itemProp="url"
-                    >
-                      <HugeiconsIcon
-                        icon={LinkCircle02Icon}
-                        strokeWidth={2}
-                        className="size-4"
-                      />
-                      <span className="sr-only">Open Project Link</span>
-                    </a>
-                  }
-                />
-                <TooltipContent className="font-geist-sans">
-                  <p>Open Project Link</p>
-                </TooltipContent>
-              </Tooltip>
-            </div>
-          </header>
-        </CollapsibleTrigger>
-        <CollapsibleContent
-          keepMounted
-          className="group h-(--collapsible-panel-height) overflow-hidden duration-300 data-ending-style:h-0 data-ending-style:animate-fade-out data-starting-style:h-0 data-starting-style:animate-fade-in"
-        >
-          <div className="my-3 space-y-4 duration-300">
-            {project.description && (
-              <p
-                className="text-sm leading-relaxed text-muted-foreground"
-                itemProp="description"
-              >
-                {project.description}
-              </p>
-            )}
-            {project.features && project.features.length > 0 && (
-              <div>
-                <h4 className="sr-only">Features</h4>
-                <ul
-                  className="ml-4 list-disc space-y-2 text-sm leading-relaxed text-muted-foreground"
-                  aria-label="Features"
-                >
-                  {project.features.map((feature, index) => (
-                    <li key={index} itemProp="applicationCategory">
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            {project.skills && project.skills.length > 0 && (
-              <div>
-                <h4 className="sr-only">Technologies and Skills</h4>
-                <ul
-                  className="flex flex-wrap gap-2"
-                  aria-label="Technologies and skills used"
-                >
-                  {project.skills.map((skill) => (
-                    <li
-                      key={skill}
-                      className={cn(
-                        "inline-flex items-center rounded-md px-2 py-0.5 font-geist-mono text-xs",
-                        "border bg-muted text-muted-foreground",
-                        "cursor-default transition-colors duration-300 hover:bg-muted/80 hover:text-foreground"
-                      )}
-                      itemProp="applicationCategory"
-                    >
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
           </div>
-        </CollapsibleContent>
-      </Collapsible>
-    </article>
+          <p
+            className="font-geist-mono text-[13px] font-light text-muted-foreground"
+            itemProp="description"
+          >
+            {project.description}
+          </p>
+
+          {project.skills && project.skills.length > 0 && (
+            <div>
+              <h4 className="sr-only">Technologies and Skills</h4>
+              <ul
+                className="flex flex-wrap gap-2"
+                aria-label="Technologies and skills used"
+              >
+                {project.skills.map((skill) => (
+                  <li
+                    key={skill}
+                    className={cn(
+                      "inline-flex items-center rounded-md px-2 py-0.5 font-geist-mono text-[10px]",
+                      "border bg-muted text-muted-foreground",
+                      "cursor-default transition-colors duration-300 hover:bg-muted/80 hover:text-foreground"
+                    )}
+                    itemProp="applicationCategory"
+                  >
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </article>
+    </a>
   );
 }

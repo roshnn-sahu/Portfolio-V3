@@ -6,7 +6,7 @@ export default function Projects() {
   if (!PROJECTS || PROJECTS.length === 0) {
     return (
       <section
-        className="mt-15 space-y-5  font-geist-sans"
+        className="mt-15 space-y-5 font-geist-sans"
         aria-labelledby="projects-heading"
       >
         <header>
@@ -25,7 +25,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="mt-15 scroll-mt-20 space-y-5 "
+      className="mt-15 scroll-mt-20 space-y-5"
       aria-labelledby="projects-heading"
     >
       <header>
@@ -36,7 +36,7 @@ export default function Projects() {
           Projects
         </h2>
       </header>
-      <div className="space-y-5">
+      <div className=" grid grid-cols-1 md:grid-cols-2 gap-5">
         {PROJECTS.map((project, index) => (
           <div key={project.id}>
             <ProjectCard project={project} />

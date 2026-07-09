@@ -8,4 +8,6 @@ export type Project = {
   link: string;
   skills: string[];
   isExpanded?: boolean;
+  coverImage:string;
+  alt:string;
 };

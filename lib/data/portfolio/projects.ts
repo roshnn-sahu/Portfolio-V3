@@ -3,8 +3,10 @@ import { Project } from "@/types/projects";
 export const PROJECTS: Project[] = [
   {
     id: "documate-ai",
-    title: "DocumateAI – RAG-Based AI Document Chatbot",
+    title: "DocumateAI",
     logo: "/images/project-logos/documate.png",
+    coverImage: null,
+    alt: "/images/project-cover/bolt-creator.png",
     description:
       "AI-powered document chatbot enabling contextual conversations with PDFs, DOCX files, and notes using Retrieval-Augmented Generation (RAG), semantic search, and vector embeddings.",
 
@@ -39,8 +41,10 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "boltcreator",
-    title: "BoltCreator - AI-powered thumbnail generator for social growth",
+    title: "BoltCreator",
     logo: "/images/project-logos/boltcreator.jpg",
+    coverImage: "/images/project-cover/bolt-creator.png",
+    alt: "/images/project-cover/bolt-creator.png",
     description:
       "AI-powered SaaS platform for generating professional thumbnails and creator-focused social growth assets with optimized generation workflows and scalable media handling.",
     features: [
@@ -67,8 +71,10 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "beatwave",
-    title: "BeatWave - Premium Beats Marketplace for Producers & Artists",
+    title: "BeatWave - Beats Store",
     logo: "/images/project-logos/beatwave.png",
+    coverImage: "/images/project-cover/beat-wave.png",
+    alt: "/images/project-cover/beat-wave.png",
     description:
       "Premium digital marketplace for music producers and artists to upload, showcase, and sell beats with seamless checkout and creator-focused workflows.",
     features: [
