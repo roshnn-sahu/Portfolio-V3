@@ -33,7 +33,7 @@ export default function CTA() {
             target="_blank"
             className={cn(
               buttonVariants({ variant: "default" }),
-              "w-fit cursor-pointer bg-foreground font-geist-sans transition-colors hover:bg-foreground/90! active:scale-98"
+              "w-fit cursor-pointer font-geist-sans transition-colors active:scale-98 ring-1 ring-foreground  ring-offset-1 ring-inset ring-offset-foreground  bg-linear-to-b from-foreground/50 to-foreground "
             )}
           >
             Book a call
