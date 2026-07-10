@@ -5,7 +5,7 @@ export const PROJECTS: Project[] = [
     id: "documate-ai",
     title: "DocumateAI",
     logo: "/images/project-logos/documate.png",
-    coverImage: null,
+    coverImage: "",
     alt: "/images/project-cover/bolt-creator.png",
     description:
       "AI-powered document chatbot enabling contextual conversations with PDFs, DOCX files, and notes using Retrieval-Augmented Generation (RAG), semantic search, and vector embeddings.",
