@@ -5,6 +5,7 @@ import {
   NewTwitterIcon,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import {cn} from "@/lib/utils"
 
 export default function Connect() {
   const CONNECT_LINKS = [
@@ -59,7 +60,9 @@ export default function Connect() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-md border bg-muted px-2.5 py-1 font-geist-mono text-muted-foreground transition-colors duration-300 hover:bg-muted/80 hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
+                className={cn("flex items-center gap-2 rounded-md border bg-muted px-2.5 py-1 ","font-geist-mono text-muted-foreground transition-all duration-300 ","hover:bg-muted/80 hover:text-foreground focus-visible:ring-2 ","focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none",
+                  "ring-1 ring-border/80 shadow-[inset_0_0.7px_0_0_rgba(255,255,255,0.8)] dark:shadow-[inset_0_0.7px_0_0_rgba(255,255,255,0.2)] active:scale-95 "
+                )}
               >
                 <HugeiconsIcon
                   icon={link.icon}
