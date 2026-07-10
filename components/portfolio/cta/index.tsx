@@ -10,8 +10,8 @@ export default function CTA() {
       id="cta"
       className="mt-20 mb-5 scroll-mt-20 space-y-5"
       aria-labelledby="cta-heading"
-    >
-      <div className="flex flex-col gap-5 rounded-2xl border p-6 transition-colors hover:bg-muted/10">
+    > 
+        <div className="flex flex-col gap-5 rounded-2xl border p-6 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.6),inset_0_-10px_20px_-10px_rgba(0,0,0,0.15)] ring-1 ring-border/80 transition-colors hover:bg-muted/10 dark:shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.2),inset_0_-10px_20px_-10px_rgba(0,0,0,0.5)]">
         <div className="flex flex-col gap-2">
           <h2 className="font-geist-pixel-square text-2xl tracking-tight sm:text-3xl">
             Let&apos;s talk

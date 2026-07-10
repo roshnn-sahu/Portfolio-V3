@@ -88,7 +88,7 @@ function FooterDateTime() {
 
 export default function SiteFooter() {
   return (
-    <footer className="mt-10 w-full px-5">
+    <footer className="mt-10 w-full px-5 pb-12">
       <div className="flex flex-col gap-4 border-t py-8">
         <FooterDateTime />
         <div>
