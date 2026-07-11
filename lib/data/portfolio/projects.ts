@@ -5,8 +5,8 @@ export const PROJECTS: Project[] = [
     id: "documate-ai",
     title: "DocumateAI",
     logo: "/images/project-logos/documate.png",
-    coverImage: "",
-    alt: "/images/project-cover/bolt-creator.png",
+    coverImage: "/images/project-cover/documate-ai.webp",
+    alt: "/images/project-cover/documate-ai.webp",
     description:
       "AI-powered document chatbot enabling contextual conversations with PDFs, DOCX files, and notes using Retrieval-Augmented Generation (RAG), semantic search, and vector embeddings.",
 
@@ -43,8 +43,8 @@ export const PROJECTS: Project[] = [
     id: "boltcreator",
     title: "BoltCreator",
     logo: "/images/project-logos/boltcreator.jpg",
-    coverImage: "/images/project-cover/bolt-creator.png",
-    alt: "/images/project-cover/bolt-creator.png",
+    coverImage: "/images/project-cover/bolt-creator.webp",
+    alt: "/images/project-cover/bolt-creator.webp",
     description:
       "AI-powered SaaS platform for generating professional thumbnails and creator-focused social growth assets with optimized generation workflows and scalable media handling.",
     features: [
@@ -73,8 +73,8 @@ export const PROJECTS: Project[] = [
     id: "beatwave",
     title: "BeatWave - Beats Store",
     logo: "/images/project-logos/beatwave.png",
-    coverImage: "/images/project-cover/beat-wave.png",
-    alt: "/images/project-cover/beat-wave.png",
+    coverImage: "/images/project-cover/beat-wave.webp",
+    alt: "/images/project-cover/beat-wave.webp",
     description:
       "Premium digital marketplace for music producers and artists to upload, showcase, and sell beats with seamless checkout and creator-focused workflows.",
     features: [
@@ -86,7 +86,7 @@ export const PROJECTS: Project[] = [
     ],
     github: "https://github.com/roshnn-sahu/BeatWave",
     link: "https://beat-wave-pink.vercel.app/",
-    skills: ["Next.js", "React", "TailwindCSS", "Cashfree", "Motion", "Vite"],
+    skills: ["Next.js", "React", "TailwindCSS","Express.js","MongoDB", "Cashfree", "Motion", "Vite"],
     isExpanded: false,
   },
 ];

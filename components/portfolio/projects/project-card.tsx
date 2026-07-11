@@ -35,7 +35,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Visit ${project.title}`}
-      className="group/post hover:bg-accent-muted/80 relative flex h-full flex-col border-2 border-dashed transition-colors hover:border-accent-foreground/20"
+      className="group/post hover:bg-accent-muted/80 relative flex h-full flex-col border-2 border-dashed transition-all hover:border-accent-foreground/20"
     >
       <article
         className="font-geist-sans"
@@ -67,13 +67,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <img
                 src={project.logo}
                 alt={`${project.title} logo`}
-                className="h-4 w-4 rounded-lg border grayscale transition-[filter] duration-300 ease-[cubic-bezier(0.42,0,0.58,1)] group-hover/post:grayscale-0"
+                className="size-6 rounded-lg border grayscale transition-[filter] duration-300 ease-[cubic-bezier(0.42,0,0.58,1)] group-hover/post:grayscale-0"
                 itemProp="image"
               />
             </div>
             <div className="flex w-full items-center justify-between gap-2">
               <h3
-                className="truncate font-geist-sans text-sm font-medium text-foreground"
+                className="truncate font-geist-sans text-md font-medium text-foreground"
                 itemProp="name"
               >
                 {project.title}
@@ -106,7 +106,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             </div>
           </div>
           <p
-            className="font-geist-mono text-[13px] font-light text-muted-foreground"
+            className="font-geist-mono text-md font-light text-muted-foreground"
             itemProp="description"
           >
             {project.description}
@@ -124,7 +124,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     key={skill}
                     className={cn(
                       "inline-flex items-center rounded-sm px-2 py-0.5 font-geist-mono text-[10px]",
-                      "border bg-muted text-muted-foreground ring-1 ring-border/80 shadow-[inset_0_0.7px_0_0_rgba(255,255,255,0.8)] dark:shadow-[inset_0_0.7px_0_0_rgba(255,255,255,0.2)]",
+                      "border bg-muted text-muted-foreground shadow-[inset_0_0.7px_0_0_rgba(255,255,255,0.8)] ring-1 ring-border/80 dark:shadow-[inset_0_0.7px_0_0_rgba(255,255,255,0.2)]",
                       "cursor-default transition-colors duration-300 hover:bg-muted/80 hover:text-foreground"
                     )}
                     itemProp="applicationCategory"
