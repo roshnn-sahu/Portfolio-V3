@@ -2,7 +2,7 @@
 
 A clean, professional showcase for my projects, work history, and personal blog as a Full Stack Developer.
 
-→ Check out the live site: [dev-roshan.com](https://dev-roshan.com)
+→ Check out the live site: [roshansahu.in](https://roshansahu.site)
 
 <a href="https://dev-roshan.com">
   <picture>
