@@ -40,7 +40,7 @@ export default function Overview() {
             >
               @hloRoshan
             </Link>
-            ,{" "}
+            , explore my code on{" "}
             <Link
               href="https://github.com/roshnn-sahu"
               target="_blank"
@@ -50,8 +50,8 @@ export default function Overview() {
             >
               GitHub
             </Link>{" "}
-            or email me at{" "}
-            <span>
+            or reach out via{" "}
+            <span className="relative inline-flex items-center gap-1">
               <Link
                 href="mailto:hello.roshan004@gmail.com"
                 target="_blank"
@@ -59,11 +59,11 @@ export default function Overview() {
                 className="font-medium text-foreground underline-offset-4 hover:underline"
                 aria-label="Mail to hello.roshan004@gmail.com"
               >
-                Email
+                email
               </Link>
               <CopyButton
                 value="hello.roshan004@gmail.com"
-                className="ml-0.5"
+                className="static top-auto right-auto border-none size-3"
               />
             </span>
           </li>

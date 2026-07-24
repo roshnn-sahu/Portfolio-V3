@@ -26,15 +26,13 @@ export const PROJECTS: Project[] = [
       "Next.js",
       "TypeScript",
       "Tailwind CSS",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
       "RAG Architecture",
       "Vector Embeddings",
       "Semantic Search",
       "AI Integration",
       "File Upload Handling",
-      "shadcn/ui",
+      "Supabase",
+    
     ],
 
     isExpanded: true,
