@@ -15,15 +15,16 @@ export default function Overview() {
           <li>
             Currently building{" "}
             <Link
-              href="https://www.boltcreator.online/"
+              href="https://www.documate-ai-flax.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-foreground underline underline-offset-4"
-              aria-label="Visit BoltCreator"
+              aria-label="Visit Documate.ai"
             >
-              BoltCreator
+              Documate.ai
             </Link>
-            , an AI-powered thumbnail generator for social growth.
+            , an AI-powered document RAG assistant that makes knowledge
+            instantly searchable.
           </li>
           <li>
             Focused on modern architecture, performance, and product clarity.
@@ -67,7 +68,6 @@ export default function Overview() {
             </span>
           </li>
         </ul>
-        
       </motion.div>
     </section>
   );

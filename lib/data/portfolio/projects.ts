@@ -20,7 +20,7 @@ export const PROJECTS: Project[] = [
     ],
 
     github: "https://github.com/roshnn-sahu/Documate-AI",
-    link: "https://your-documate-live-link.com",
+    link: "https://www.documate-ai-flax.vercel.app/",
 
     skills: [
       "Next.js",
